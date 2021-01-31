@@ -42,7 +42,16 @@
         </javaClientGenerator>
 
         <!--配置数据库表-->
-        <table tableName="" domainObjectName="" />
+        <table tableName="t_activity" domainObjectName="Activity" />
+        <table tableName="t_admin" domainObjectName="Admin" />
+        <table tableName="t_browse" domainObjectName="Browse" />
+        <table tableName="t_exchange" domainObjectName="Exchange" />
+        <table tableName="t_goods" domainObjectName="Goods" />
+        <table tableName="t_praise" domainObjectName="Praise" />
+        <table tableName="t_study" domainObjectName="Study" />
+        <table tableName="t_type" domainObjectName="Type" />
+        <table tableName="t_user" domainObjectName="User" />
+
 
     </context>
 </generatorConfiguration>

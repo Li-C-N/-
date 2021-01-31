@@ -4,7 +4,7 @@ server:
 spring:
   # 配置数据源信息
   datasource:
-    url: jdbc:mysql://39.102.133.112:3306/xxxxxx?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
+    url: jdbc:mysql://39.102.133.112:3306/PESYSTEM?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
     username: root
     password: 2413
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -20,7 +20,7 @@ mybatis:
 # 日志配置
 logging:
   file:
-    name: log/community.log
+    name: log/PESYSYTEM.log
     max-size: 200MB
     max-history: 30
   level:
