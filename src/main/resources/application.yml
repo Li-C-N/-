@@ -21,11 +21,13 @@ mybatis:
 logging:
   file:
     name: log/PESYSYTEM.log
-    max-size: 200MB
-    max-history: 30
   level:
     com.hoperun.pesystem.mapper: debug
     root: info
+  logback:
+    rollingpolicy:
+      max-file-size: 200MB
+      max-history: 30
 
 #beetle:
 #  # 默认头像链接
