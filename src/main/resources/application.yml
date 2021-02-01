@@ -29,6 +29,6 @@ logging:
       max-file-size: 200MB
       max-history: 30
 
-#beetle:
-#  # 默认头像链接
-#  defaultAvatar:
+beetle:
+  # 默认头像链接
+  defaultAvatar:
