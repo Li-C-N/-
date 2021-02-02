@@ -17,12 +17,12 @@ public class RegisterController {
 
     @PostMapping("/register")
     @ResponseBody
-    public ResultDto register(@RequestParam("phonenumber") String phonenumber,
+    public ResultDto<?> register(@RequestParam("phonenumber") String phonenumber,
                               @RequestParam("name") String name,
                               @RequestParam("password") String password
                           ) {
        if(registerService.register(name,password,phonenumber)){
-           return  ResultDto.okOf();
+           return  ResultDto.RegisterOk();
        }
         return ResultDto.errorOf(CustomizeErrorCode.REGISTER_FAILED);
     }

@@ -15,8 +15,6 @@ public class LoginService {
     @Autowired
     private UserMapper userMapper;
 
-    private static final int COOKIE_EXPIRY = 60 * 60 * 24 * 7;
-
 
     public boolean checkLogin(String phonenumber, String password) {
         UserExample example = new UserExample();

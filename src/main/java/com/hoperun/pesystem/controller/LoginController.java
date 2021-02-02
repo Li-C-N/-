@@ -19,7 +19,7 @@ public class LoginController {
     private LoginService loginService;
         @PostMapping("/login")
         @ResponseBody
-        public ResultDto login(@RequestBody JSONObject jsonObject, @RequestHeader Map<String,Object> he, @RequestBody Map<String,Object> para) throws JsonProcessingException {
+        public ResultDto<?> login(@RequestBody JSONObject jsonObject, @RequestHeader Map<String,Object> he, @RequestBody Map<String,Object> para) throws JsonProcessingException {
 
             String phonenumber=jsonObject.getString("loginName");
             String password=jsonObject.getString("password");
@@ -33,7 +33,7 @@ public class LoginController {
 //                hs.put("token",token+phonenumber+password);
 //                ObjectMapper objectMapper=new ObjectMapper();
 //                return objectMapper.writeValueAsString(hs);
-               return  ResultDto.okOf(token);
+               return  ResultDto.LoginOK(token);
             }
             return  ResultDto.errorOf(CustomizeErrorCode.LOGIN_FAILED);
         }

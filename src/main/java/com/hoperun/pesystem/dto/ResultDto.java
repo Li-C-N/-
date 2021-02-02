@@ -30,14 +30,27 @@ public class ResultDto<T> {
         public static <T> ResultDto<T> okOf() {
             ResultDto<T> resultDto = new ResultDto<>();
             resultDto.setCode(2000);
-            resultDto.setMessage("注册成功");
+            resultDto.setMessage("请求成功");
+            return resultDto;
+        }
+        public static <T> ResultDto<T> RegisterOk() {
+            ResultDto<T> resultDto = new ResultDto<>();
+            resultDto.setCode(2000);
+            resultDto.setMessage("注册成功！");
             return resultDto;
         }
 
         public static <T> ResultDto<T> okOf(T t){
             ResultDto<T> resultDto = new ResultDto<>();
             resultDto.setCode(2000);
-            resultDto.setMessage("登录成功");
+            resultDto.setMessage("请求成功");
+            resultDto.setData(t);
+            return  resultDto;
+        }
+        public static <T> ResultDto<T> LoginOK(T t){
+            ResultDto<T> resultDto = new ResultDto<>();
+            resultDto.setCode(2000);
+            resultDto.setMessage("登陆成功！");
             resultDto.setData(t);
             return  resultDto;
         }
