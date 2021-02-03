@@ -18,19 +18,19 @@ public class IndexService {
     @Autowired
     private StudyMapper studyMapper;
 
-    public List<Activity> ShowHotInfoWithActivity(){
+    public List<Activity> showHotInfoWithActivity(){
         ActivityExample  activityExample=new ActivityExample();
         ActivityExample.Criteria  criteria = activityExample.createCriteria();
         criteria.andAFlagEqualTo(3);
         return activityMapper.selectByExample(activityExample);
     }
-    public List<Goods> ShowHotInfoWithGoods(){
+    public List<Goods> showHotInfoWithGoods(){
         GoodsExample goodsExample=new GoodsExample();
         GoodsExample.Criteria  criteria = goodsExample.createCriteria();
         criteria.andGoodsFlagEqualTo(3);
         return goodsMapper.selectByExample(goodsExample);
     }
-    public List<Study> ShowHotInfoWithStudy(){
+    public List<Study> showHotInfoWithStudy(){
         StudyExample  studyExample=new StudyExample();
         StudyExample.Criteria  criteria = studyExample.createCriteria();
         criteria.andStuFlagEqualTo(3);

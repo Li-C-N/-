@@ -9,6 +9,12 @@ spring:
     password: 2413
     driver-class-name: com.mysql.cj.jdbc.Driver
 
+pagehelper:
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql
+  helper-dialect: mysql
+
 # 开启 mybatis 驼峰标识
 mybatis:
   configuration:

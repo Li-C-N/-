@@ -27,13 +27,12 @@ public class UserController {
     private ExchangeMapper exchangeExample;
          @PostMapping("/personInfo")
          @ResponseBody
-       public ResultDto<?> PersosnInfo( HttpServletRequest request)
+       public ResultDto<?> persosnInfo( HttpServletRequest request)
         {
-            String PhoneNumber = TokenUtils.getUserphonenumber( request.getHeader("token"));
-            List<User> users =  userService.UserInfoByPhoneNumber(PhoneNumber);
-            List<Exchange> exchanges = userService.UserInfoByUserId(users.get(0).getUserId());
+            User userInfo = userService.getUserByToken( request.getHeader("token"));
+            List<Exchange> exchanges = userService.userExchangedByUserId(userInfo.getUserId());
             Map<String,Object> map = new HashMap<>();
-            map.put("用户信息",users);
+            map.put("用户信息",userInfo);
             map.put("商品兑换记录",exchanges);
             return ResultDto.okOf(map);
         }

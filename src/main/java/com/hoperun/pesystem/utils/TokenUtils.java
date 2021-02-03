@@ -4,7 +4,11 @@ import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTDecodeException;
 import com.auth0.jwt.interfaces.DecodedJWT;
+import com.hoperun.pesystem.model.User;
+
 import java.util.Date;
+import java.util.List;
+
 public class TokenUtils {
         private static final long EXPIRE_TIME= 10*60*60*1000;
         private static final String TOKEN_SECRET="love";  //密钥盐
@@ -55,6 +59,7 @@ public class TokenUtils {
             return null;
         }
     }
+
 //
 //        /**
 //         * 校验token是否正确,是否过期

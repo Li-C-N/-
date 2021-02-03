@@ -19,7 +19,7 @@ public class LoginController {
     private LoginService loginService;
         @PostMapping("/login")
         @ResponseBody
-        public ResultDto<?> login(@RequestBody JSONObject jsonObject, @RequestHeader Map<String,Object> he, @RequestBody Map<String,Object> para) throws JsonProcessingException {
+        public ResultDto<?> login(@RequestBody JSONObject jsonObject) throws JsonProcessingException {
 
             String phonenumber=jsonObject.getString("loginName");
             String password=jsonObject.getString("password");
