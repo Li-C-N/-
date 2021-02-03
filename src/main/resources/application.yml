@@ -37,4 +37,4 @@ logging:
 
 beetle:
   # 默认头像链接
-  defaultAvatar:
+  defaultAvatar: https://ljd-website.oss-cn-beijing.aliyuncs.com/defualt.svg

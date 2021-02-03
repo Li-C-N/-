@@ -1,6 +1,7 @@
 package com.hoperun.pesystem.controller;
 
 import com.hoperun.pesystem.dto.ResultDto;
+import com.hoperun.pesystem.enums.CustomizeCode;
 import com.hoperun.pesystem.model.Type;
 import com.hoperun.pesystem.service.GoodsService;
 import com.hoperun.pesystem.service.TypeService;
@@ -15,6 +16,6 @@ public class TypeController {
     private TypeService typeService;
     @PostMapping("/allType")
     public ResultDto<List<Type>> allType(){
-        return ResultDto.okOf(typeService.allGoodsType());
+        return ResultDto.okWithData(CustomizeCode.GOODS_TYPE_REQUEST_OK,typeService.allGoodsType());
     }
 }

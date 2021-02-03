@@ -19,7 +19,7 @@ public class GoodsService {
     private GoodsMapper goodsMapper;
 
 
-    public PageInfo<Goods> queryGoodsByPage(int pageNum, int pageSize,int type) {
+    public PageInfo<Goods> queryGoodsByPage(Integer pageNum, Integer pageSize,Integer type) {
         GoodsExample goodsExample=new GoodsExample();
         GoodsExample.Criteria  criteria = goodsExample.createCriteria();
         criteria.andGoodsTypeIdEqualTo(type);
@@ -30,11 +30,31 @@ public class GoodsService {
         return pageInfo;
 
     }
-
-    public Goods queryGoodsDetailsById(int id){
+    public PageInfo<Goods> queryGoodsByPageWithIntegralDesc(Integer pageNum, Integer pageSize) {
         GoodsExample goodsExample=new GoodsExample();
         GoodsExample.Criteria  criteria = goodsExample.createCriteria();
-        criteria.andGoodsIdEqualTo(id);
+        criteria.andGoodsFlagEqualTo(0);
+        goodsExample.setOrderByClause("Integral dasc");
+        PageHelper.startPage(pageNum,pageSize);
+        List<Goods> goods = goodsMapper.selectByExample(goodsExample);
+        PageInfo<Goods> pageInfoWithIntegralDesc = new PageInfo<Goods>(goods);
+        return pageInfoWithIntegralDesc;
+    }
+    public PageInfo<Goods> queryGoodsByPageWithIntegralAsc(Integer pageNum, Integer pageSize) {
+        GoodsExample goodsExample=new GoodsExample();
+        GoodsExample.Criteria  criteria = goodsExample.createCriteria();
+        criteria.andGoodsFlagEqualTo(0);
+        goodsExample.setOrderByClause("Integral asc");
+        PageHelper.startPage(pageNum,pageSize);
+        List<Goods> goods = goodsMapper.selectByExample(goodsExample);
+        PageInfo<Goods> pageInfoWithIntegralAsc = new PageInfo<Goods>(goods);
+        return pageInfoWithIntegralAsc;
+    }
+
+    public Goods queryGoodsDetailsById(Integer goodsId){
+        GoodsExample goodsExample=new GoodsExample();
+        GoodsExample.Criteria  criteria = goodsExample.createCriteria();
+        criteria.andGoodsIdEqualTo(goodsId);
         List<Goods> goods = goodsMapper.selectByExample(goodsExample);
         return goods.get(0);
     }

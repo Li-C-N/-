@@ -1,6 +1,7 @@
 package com.hoperun.pesystem.controller;
 
 import com.hoperun.pesystem.dto.ResultDto;
+import com.hoperun.pesystem.enums.CustomizeCode;
 import com.hoperun.pesystem.model.Activity;
 import com.hoperun.pesystem.model.Goods;
 import com.hoperun.pesystem.model.Study;
@@ -28,6 +29,6 @@ public class IndexController {
         map.put("热门活动",hotactivity);
         map.put("热门学堂",hotstudy);
         map.put("热门商品",hotgoods);
-        return ResultDto.okOf(map);
+        return ResultDto.okWithData(CustomizeCode.INDEX_INFO_REQUEST_OK,map);
     }
 }

@@ -1,14 +1,14 @@
-2021-02-02 11:50:28.124  INFO 17516 --- [restartedMain] c.hoperun.pesystem.PesystemApplication   : Starting PesystemApplication using Java 1.8.0_251 on NOTE170076 with PID 17516 (E:\Ideaproject\Points_Exchange_System\target\classes started by Administrator in E:\Ideaproject\Points_Exchange_System)
-2021-02-02 11:50:28.140  INFO 17516 --- [restartedMain] c.hoperun.pesystem.PesystemApplication   : No active profile set, falling back to default profiles: default
-2021-02-02 11:50:28.312  INFO 17516 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-02-02 11:50:28.312  INFO 17516 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2021-02-02 11:50:30.847  INFO 17516 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2021-02-02 11:50:30.858  INFO 17516 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-02-02 11:50:30.858  INFO 17516 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
-2021-02-02 11:50:30.945  INFO 17516 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-02-02 11:50:30.946  INFO 17516 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2634 ms
-2021-02-02 11:50:32.081  INFO 17516 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2021-02-02 11:50:32.624  INFO 17516 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
-2021-02-02 11:50:32.702  INFO 17516 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2021-02-02 11:50:32.749  INFO 17516 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2021-02-02 11:50:32.765  INFO 17516 --- [restartedMain] c.hoperun.pesystem.PesystemApplication   : Started PesystemApplication in 5.659 seconds (JVM running for 7.486)
+2021-02-03 23:02:00.114  INFO 236 --- [restartedMain] c.hoperun.pesystem.PesystemApplication   : Starting PesystemApplication using Java 1.8.0_131 on DESKTOP-R2AQBM3 with PID 236 (E:\Idea-Projects\PointsExchange-System\target\classes started by Li in E:\Idea-Projects\PointsExchange-System)
+2021-02-03 23:02:00.136  INFO 236 --- [restartedMain] c.hoperun.pesystem.PesystemApplication   : No active profile set, falling back to default profiles: default
+2021-02-03 23:02:00.903  INFO 236 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-02-03 23:02:00.906  INFO 236 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-02-03 23:02:06.335  INFO 236 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-02-03 23:02:06.410  INFO 236 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-02-03 23:02:06.413  INFO 236 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-02-03 23:02:06.686  INFO 236 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-02-03 23:02:06.687  INFO 236 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5777 ms
+2021-02-03 23:02:08.851  INFO 236 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-03 23:02:10.208  INFO 236 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2021-02-03 23:02:10.335  INFO 236 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-02-03 23:02:10.461  INFO 236 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-02-03 23:02:10.492  INFO 236 --- [restartedMain] c.hoperun.pesystem.PesystemApplication   : Started PesystemApplication in 13.996 seconds (JVM running for 19.793)

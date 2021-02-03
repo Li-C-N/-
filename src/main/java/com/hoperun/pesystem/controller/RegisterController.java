@@ -1,7 +1,7 @@
 package com.hoperun.pesystem.controller;
 
 import com.hoperun.pesystem.dto.ResultDto;
-import com.hoperun.pesystem.exception.CustomizeErrorCode;
+import com.hoperun.pesystem.enums.CustomizeCode;
 import com.hoperun.pesystem.service.RegisterService;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -22,8 +22,8 @@ public class RegisterController {
                               @RequestParam("password") String password
                           ) {
        if(registerService.register(name,password,phonenumber)){
-           return  ResultDto.RegisterOk();
+           return  ResultDto.okOf(CustomizeCode.REGISTER_SUCCESS);
        }
-        return ResultDto.errorOf(CustomizeErrorCode.REGISTER_FAILED);
+        return ResultDto.errorOf(CustomizeCode.REGISTER_FAILED);
     }
 }

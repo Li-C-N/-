@@ -1,6 +1,7 @@
 package com.hoperun.pesystem.controller;
 
 import com.hoperun.pesystem.dto.ResultDto;
+import com.hoperun.pesystem.enums.CustomizeCode;
 import com.hoperun.pesystem.mapper.ExchangeMapper;
 import com.hoperun.pesystem.model.Exchange;
 import com.hoperun.pesystem.model.ExchangeExample;
@@ -23,8 +24,6 @@ import java.util.Map;
 public class UserController {
     @Autowired
     private UserService  userService;
-    @Autowired
-    private ExchangeMapper exchangeExample;
          @PostMapping("/personInfo")
          @ResponseBody
        public ResultDto<?> persosnInfo( HttpServletRequest request)
@@ -34,7 +33,7 @@ public class UserController {
             Map<String,Object> map = new HashMap<>();
             map.put("用户信息",userInfo);
             map.put("商品兑换记录",exchanges);
-            return ResultDto.okOf(map);
+            return ResultDto.okWithData(CustomizeCode.USERINFO_AND_EXCHANGE_RECORD_REQUEST_OK,map);
         }
     }
 

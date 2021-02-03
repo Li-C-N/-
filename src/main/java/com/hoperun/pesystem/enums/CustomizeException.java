@@ -1,11 +1,11 @@
-package com.hoperun.pesystem.exception;
+package com.hoperun.pesystem.enums;
 
 
 public class CustomizeException extends RuntimeException{
     Integer code;
     String message;
 
-    public CustomizeException(CustomizeErrorCode errorCode) {
+    public CustomizeException(CustomizeCode errorCode) {
         this.code = errorCode.getCode();
         this.message = errorCode.getMessage();
     }
