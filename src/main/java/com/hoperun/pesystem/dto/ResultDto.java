@@ -4,25 +4,25 @@ import com.hoperun.pesystem.enums.CustomizeException;
 import lombok.Data;
 @Data
 public class ResultDto<T> {
+        private String status;
         private Integer code;
         private String message;
-        private String status;
         private T data;
 
         //失败不带数据结果集
         public static <T> ResultDto<T> errorOf(Integer code, String message) {
             ResultDto<T> resultDto = new ResultDto<>();
+            resultDto.setStatus("请求失败(4000)");
             resultDto.setCode(code);
             resultDto.setMessage(message);
-            resultDto.setStatus("请求失败(4000)");
             return resultDto;
         }
         //失败带数据结果集
         public static <T> ResultDto<T> errorWithData(Integer code, String message,T t) {
             ResultDto<T> resultDto = new ResultDto<>();
+            resultDto.setStatus("请求失败(4000)");
             resultDto.setCode(code);
             resultDto.setMessage(message);
-            resultDto.setStatus("请求失败(4000)");
             resultDto.setData(t);
             return resultDto;
         }
@@ -40,17 +40,17 @@ public class ResultDto<T> {
         //成功不带数据结果集
         public static <T> ResultDto<T> okOf(Integer code, String message) {
             ResultDto<T> resultDto = new ResultDto<>();
+            resultDto.setStatus("请求成功(2000)");
             resultDto.setCode(code);
             resultDto.setMessage(message);
-            resultDto.setStatus("请求成功(2000)");
             return resultDto;
         }
         //成功带数据结果集
         public static <T> ResultDto<T> okWithData(Integer code, String message,T t) {
             ResultDto<T> resultDto = new ResultDto<>();
+            resultDto.setStatus("请求成功(2000)");
             resultDto.setCode(code);
             resultDto.setMessage(message);
-            resultDto.setStatus("请求成功(2000)");
             resultDto.setData(t);
             return resultDto;
         }
@@ -69,9 +69,9 @@ public class ResultDto<T> {
         //异常不带数据结果集
         public static <T> ResultDto<T> exceptionOf(Integer code, String message) {
             ResultDto<T> resultDto = new ResultDto<>();
+            resultDto.setStatus("请求异常(3000)");
             resultDto.setCode(code);
             resultDto.setMessage(message);
-            resultDto.setStatus("请求异常(3000)");
             return resultDto;
         }
         //Exception封装枚举信息

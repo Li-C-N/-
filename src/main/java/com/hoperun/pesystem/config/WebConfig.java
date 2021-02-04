@@ -21,34 +21,37 @@ public class WebConfig implements WebMvcConfigurer{
         public WebConfig(TokenInterceptor tokenInterceptor) {
             this.tokenInterceptor = tokenInterceptor;
         }
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        List<String> excludePath = new ArrayList<>();
+        //排除拦截，除了注册登录(此时还没token)，其他都拦截
+        excludePath.add("/register");  //登录
+        excludePath.add("/login");     //注册
+        registry.addInterceptor(tokenInterceptor)
+                .addPathPatterns("/**")
+                .excludePathPatterns(excludePath);
+        WebMvcConfigurer.super.addInterceptors(registry);
+    }
 
-        @Override
-        public void addCorsMappings(CorsRegistry registry) {
-            registry.addMapping("/**")
-                    .allowCredentials(true)
-                    .allowedHeaders("*")
-                    .allowedMethods("*")
-                    .allowedOrigins("*");
-        }
-
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/**")
+                .allowedOrigins("*")
+                .allowedMethods("GET", "HEAD", "POST","PUT", "DELETE", "OPTIONS")
+                .allowedHeaders("*")
+                .exposedHeaders("access-control-allow-headers",
+                        "access-control-allow-methods",
+                        "access-control-allow-origin",
+                        "access-control-max-age",
+                        "X-Frame-Options")
+                .allowCredentials(false).maxAge(3600);
+        WebMvcConfigurer.super.addCorsMappings(registry);
+    }
         @Override
         public void configureAsyncSupport(AsyncSupportConfigurer configurer) {
             configurer.setTaskExecutor(new ConcurrentTaskExecutor(Executors.newFixedThreadPool(3)));
             configurer.setDefaultTimeout(30000);
         }
 
-        @Override
-        public void addInterceptors(InterceptorRegistry registry) {
-            List<String> excludePath = new ArrayList<>();
-            //排除拦截，除了注册登录(此时还没token)，其他都拦截
-            excludePath.add("/user/register");  //登录
-            excludePath.add("/user/login");     //注册
-            excludePath.add("/static/**");  //静态资源
-            excludePath.add("/assets/**");  //静态资源
 
-            registry.addInterceptor(tokenInterceptor)
-                    .addPathPatterns("/**")
-                    .excludePathPatterns(excludePath);
-            WebMvcConfigurer.super.addInterceptors(registry);
-        }
     }

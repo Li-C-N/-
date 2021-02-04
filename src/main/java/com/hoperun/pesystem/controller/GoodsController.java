@@ -6,10 +6,7 @@ import com.hoperun.pesystem.model.Goods;
 import com.hoperun.pesystem.service.GoodsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -18,15 +15,17 @@ public class GoodsController {
     @Autowired
     private GoodsService goodsService;
 
-    @GetMapping("/allGoods/goodsTypeId={goodsType}")
-    public  ResultDto<PageInfo<Goods>> showGoodsListByPage(@PathVariable("goodsType") Integer goodsType,
+    @GetMapping("/allGoods/goodsTypeId={goodsTypeId}")
+    @ResponseBody
+    public  ResultDto<PageInfo<Goods>> showGoodsListByPage(@PathVariable("goodsTypeId") Integer goodsTypeId,
                                                    @RequestParam(value = "pageNum" , defaultValue = "1") Integer pageNum,
                                                    @RequestParam(value = "pageSize" ,defaultValue = "8") Integer pageSize){
 
-        PageInfo<Goods> pageInfo=goodsService.queryGoodsByPage(pageNum,pageSize,goodsType);
+        PageInfo<Goods> pageInfo=goodsService.queryGoodsByPage(pageNum,pageSize,goodsTypeId);
         return  ResultDto.okWithData(CustomizeCode.GOODS_PAGEINFO_REQUEST_OK,pageInfo);
     }
     @GetMapping("/allGoods")
+    @ResponseBody
     public  ResultDto<PageInfo<Goods>> showGoodsListByIntegral(@RequestParam(value = "integraSort" ,defaultValue = "0") Integer integraSort,
                                                            @RequestParam(value = "pageNum" , defaultValue = "1") Integer pageNum,
                                                            @RequestParam(value = "pageSize" , defaultValue = "8") Integer pageSize){
@@ -41,6 +40,7 @@ public class GoodsController {
 
 
     @GetMapping("/allGoods/goodsDetailsId={goodsId}")
+    @ResponseBody
     public  ResultDto<Goods> showGoodDeatilsById(@PathVariable("goodsId") Integer goodsId
     ){
         if(goodsId==null) {

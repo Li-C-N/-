@@ -34,7 +34,7 @@ public class GoodsService {
         GoodsExample goodsExample=new GoodsExample();
         GoodsExample.Criteria  criteria = goodsExample.createCriteria();
         criteria.andGoodsFlagEqualTo(0);
-        goodsExample.setOrderByClause("Integral dasc");
+        goodsExample.setOrderByClause("goods_integral desc");
         PageHelper.startPage(pageNum,pageSize);
         List<Goods> goods = goodsMapper.selectByExample(goodsExample);
         PageInfo<Goods> pageInfoWithIntegralDesc = new PageInfo<Goods>(goods);
@@ -44,7 +44,7 @@ public class GoodsService {
         GoodsExample goodsExample=new GoodsExample();
         GoodsExample.Criteria  criteria = goodsExample.createCriteria();
         criteria.andGoodsFlagEqualTo(0);
-        goodsExample.setOrderByClause("Integral asc");
+        goodsExample.setOrderByClause("goods_integral asc");
         PageHelper.startPage(pageNum,pageSize);
         List<Goods> goods = goodsMapper.selectByExample(goodsExample);
         PageInfo<Goods> pageInfoWithIntegralAsc = new PageInfo<Goods>(goods);
