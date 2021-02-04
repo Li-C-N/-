@@ -23,9 +23,12 @@ public enum CustomizeCode implements ICustomizeCode {
     STUDY_PRAISE_CANCEL_FAILED(2019, "取消点赞失败！"),
     //
     LOGIN_FAILED(4001, "登录失败，密码或账号错误！"),
-    LOGIN_ISBLACK(4001, "手机号或密码不能为空！"),
-    REGISTER_FAILED(4002, "该手机号码已经注册！"),
-    INTEGRAL_NOT_ENOUGH(4003, "兑换失败，积分不足！"),
+    LOGIN_ISBLACK(4002, "手机号或密码不能为空！"),
+    REGISTER_FAILED(4003, "该手机号码已经注册！"),
+    PHONENUMBER_ERROR(4004, "手机号码填写有误！"),
+    PASSWORD_ERROR(4005, "密码必须包含数字字母(6-16位)！"),
+    USERNAME_ERROR(4006, "用户名不合法！"),
+    INTEGRAL_NOT_ENOUGH(4007, "兑换失败，积分不足！"),
 
 
 

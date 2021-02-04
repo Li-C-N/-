@@ -21,9 +21,12 @@ public class RegisterController {
                               @RequestParam("name") String name,
                               @RequestParam("password") String password
                           ) {
-       if(registerService.register(name,password,phonenumber)){
+        if(!registerService.checkUserName(name)) return ResultDto.errorOf(CustomizeCode.USERNAME_ERROR);
+        if(!registerService.checkPhonenumber(phonenumber))  return ResultDto.errorOf(CustomizeCode.PHONENUMBER_ERROR);
+        if(!registerService.checkPassword(password)) return ResultDto.errorOf(CustomizeCode.PASSWORD_ERROR);
+        if(registerService.register(name,password,phonenumber)){
            return  ResultDto.okOf(CustomizeCode.REGISTER_SUCCESS);
-       }
+        }
         return ResultDto.errorOf(CustomizeCode.REGISTER_FAILED);
     }
 }
