@@ -16,11 +16,20 @@ public class ActivityController {
     @Autowired
     private ActivityService activityService;
     @GetMapping("/allActivity")
-    public ResultDto<PageInfo<Activity>> showActivityListByPage(@RequestParam(value = "activityType") Integer activityType,
+    public ResultDto<PageInfo<Activity>> showActivityListByPage(@RequestParam(value = "activityTypeId") Integer activityTypeId,
                                                              @RequestParam(value = "pageNum" , defaultValue = "1") Integer pageNum,
                                                              @RequestParam(value = "pageSize" ,defaultValue = "8") Integer pageSize){
 
-        PageInfo<Activity> pageInfo=activityService.queryActivityByPage(pageNum,pageSize,activityType);
+        PageInfo<Activity> pageInfo=activityService.queryActivityByPage(pageNum,pageSize,activityTypeId);
         return  ResultDto.okWithData(CustomizeCode.ACTIVITY_PAGEINFO_REQUEST_OK,pageInfo);
     }
+    @GetMapping("/allActivity/activityDetailsId={activityId}")
+    public  ResultDto<Activity> showActivityDeatilsById(@PathVariable("activityId") Integer activityId
+    ){
+        if(activityId==null) {
+            activityId=1;
+        }
+        return  ResultDto.okWithData(CustomizeCode.ACTIVITY_DETAILS_REQUEST_OK,activityService.queryActivityDetailsById(activityId));
+    }
+
 }

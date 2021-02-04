@@ -14,8 +14,16 @@ import java.util.List;
 public class TypeController {
     @Autowired
     private TypeService typeService;
-    @PostMapping("/allType")
-    public ResultDto<List<Type>> allType(){
+    @PostMapping("/allGOODSType")
+    public ResultDto<List<Type>> allGOODSType(){
         return ResultDto.okWithData(CustomizeCode.GOODS_TYPE_REQUEST_OK,typeService.allGoodsType());
+    }
+    @PostMapping("/allActivityType")
+    public ResultDto<List<Type>> allActivityType(){
+        return ResultDto.okWithData(CustomizeCode.GOODS_TYPE_REQUEST_OK,typeService.allActivityType());
+    }
+    @PostMapping("/allStudtType")
+    public ResultDto<List<Type>> allStudtType(){
+        return ResultDto.okWithData(CustomizeCode.GOODS_TYPE_REQUEST_OK,typeService.allStudyType());
     }
 }

@@ -26,4 +26,11 @@ public class ActivityService {
         PageInfo<Activity> pageInfo = new PageInfo<Activity>(activity);
         return pageInfo;
     }
+    public Activity queryActivityDetailsById(Integer activityId){
+        ActivityExample activityExample=new ActivityExample();
+        ActivityExample.Criteria  criteria = activityExample.createCriteria();
+        criteria.andAIdEqualTo(activityId);
+        List<Activity> activity = activityMapper.selectByExample(activityExample);
+        return activity.get(0);
+    }
 }

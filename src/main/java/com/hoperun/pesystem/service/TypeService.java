@@ -18,4 +18,18 @@ public class TypeService {
         criteria.andTypeFlagEqualTo(1);
         return  typeMapper.selectByExample(typeExample);
     }
+    public List<Type> allActivityType()
+    {
+        TypeExample typeExample =new TypeExample();
+        TypeExample.Criteria criteria =typeExample.createCriteria();
+        criteria.andTypeFlagEqualTo(2);
+        return  typeMapper.selectByExample(typeExample);
+    }
+    public List<Type> allStudyType()
+    {
+        TypeExample typeExample =new TypeExample();
+        TypeExample.Criteria criteria =typeExample.createCriteria();
+        criteria.andTypeFlagEqualTo(3);
+        return  typeMapper.selectByExample(typeExample);
+    }
 }

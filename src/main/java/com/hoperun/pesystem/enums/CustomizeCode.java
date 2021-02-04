@@ -14,6 +14,13 @@ public enum CustomizeCode implements ICustomizeCode {
     GOODS_PAGEINFO_WITH_INTEGRAL_ASC_REQUEST_OK(2010, "商品升序分页列表请求成功！"),
     ACTIVITY_PAGEINFO_REQUEST_OK(2011, "活动分页列表请求成功！"),
     STUDY_PAGEINFO_REQUEST_OK(2012, "活动分页列表请求成功！"),
+    ACTIVITY_DETAILS_REQUEST_OK(2013, "活动详情信息请求成功！"),
+    STUDY_DETAILS_REQUEST_OK_AND_RECORD_OK(2014, "学堂详情信息请求成功，学堂浏览记录插入成功！"),
+    STUDY_DETAILS_REQUEST_OK_AND_RECORD_EXIST(2015, "学堂详情信息请求成功，学堂浏览记录已存在！"),
+    STUDY_PRAISE_OK(2016, "点赞成功！"),
+    STUDY_PRAISE_CANCEL_OK(2017, "取消点赞成功！"),
+    STUDY_PRAISE_FAILED(2018, "点赞失败！"),
+    STUDY_PRAISE_CANCEL_FAILED(2019, "取消点赞失败！"),
     //
     LOGIN_FAILED(4001, "登录失败，密码或账号错误！"),
     LOGIN_ISBLACK(4001, "手机号或密码不能为空！"),
