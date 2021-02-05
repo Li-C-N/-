@@ -29,7 +29,7 @@ public class TokenInterceptor implements HandlerInterceptor{
             try{
                 JSONObject json = new JSONObject();
                 json.put("msg","token verify fail");
-                json.put("code","50000");
+                json.put("code","5000");
                 response.getWriter().append(json.toJSONString());
                 System.out.println("认证失败，未通过拦截器");
             }catch (Exception e){

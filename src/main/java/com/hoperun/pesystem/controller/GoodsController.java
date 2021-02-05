@@ -20,9 +20,13 @@ public class GoodsController {
     public  ResultDto<PageInfo<Goods>> showGoodsListByPage(@PathVariable("goodsTypeId") Integer goodsTypeId,
                                                    @RequestParam(value = "pageNum" , defaultValue = "1") Integer pageNum,
                                                    @RequestParam(value = "pageSize" ,defaultValue = "8") Integer pageSize){
+        if(!goodsService.goodsTypeIdExist(goodsTypeId)) {
 
-        PageInfo<Goods> pageInfo=goodsService.queryGoodsByPage(pageNum,pageSize,goodsTypeId);
-        return  ResultDto.okWithData(CustomizeCode.GOODS_PAGEINFO_REQUEST_OK,pageInfo);
+
+            PageInfo<Goods> pageInfo = goodsService.queryGoodsByPage(pageNum, pageSize, goodsTypeId);
+            return ResultDto.okWithData(CustomizeCode.GOODS_PAGEINFO_REQUEST_OK, pageInfo);
+        }
+        return ResultDto.errorOf(CustomizeCode.GOODS_TYPE_NOT_EXIST);
     }
     @GetMapping("/allGoods")
     @ResponseBody
@@ -42,12 +46,14 @@ public class GoodsController {
     @GetMapping("/allGoods/goodsDetailsId={goodsId}")
     @ResponseBody
     public  ResultDto<Goods> showGoodDeatilsById(@PathVariable("goodsId") Integer goodsId
-    ){
-        if(goodsId==null) {
-            goodsId=1;
+    ) {
+        if (goodsId == null) {
+            goodsId = 1;
         }
-        return  ResultDto.okWithData(CustomizeCode.GOODS_DETAILS_REQUEST_OK,goodsService.queryGoodsDetailsById(goodsId));
+        if (!goodsService.goodsIdExist(goodsId)) {
+            return ResultDto.okWithData(CustomizeCode.GOODS_DETAILS_REQUEST_OK, goodsService.queryGoodsDetailsById(goodsId));
+        }
+        return ResultDto.errorOf(CustomizeCode.GOODS_NOT_EXIST);
     }
-
 
 }

@@ -8,6 +8,11 @@ import java.util.Date;
 public class ExchangeService {
     @Autowired
     private ExchangeMapper exchangeMapper;
+    /**
+     * @Author: ljd
+     * @Date: 2021/2/5 10:43
+     * @description: 兑换商品
+     **/
     public boolean excahngeInfoWithGoods(Integer goodsId ,Integer goodsIntegral,Integer goodsNum,Integer userId,String goodsName){
         Exchange exchange =new Exchange();
         Date date =new Date(System.currentTimeMillis());

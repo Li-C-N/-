@@ -5,6 +5,7 @@ import com.github.pagehelper.PageInfo;
 import com.hoperun.pesystem.mapper.BrowseMapper;
 import com.hoperun.pesystem.mapper.PraiseMapper;
 import com.hoperun.pesystem.mapper.StudyMapper;
+import com.hoperun.pesystem.mapper.TypeMapper;
 import com.hoperun.pesystem.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,6 +20,8 @@ public class StudyService {
     private BrowseMapper browseMapper;
     @Autowired
     private PraiseMapper praiseMapper;
+    @Autowired
+    private TypeMapper typeMapper;
     public PageInfo<Study> queryStudyByPage(Integer pageNum, Integer pageSize, Integer type) {
         StudyExample studyExample=new StudyExample();
         StudyExample.Criteria  criteria = studyExample.createCriteria();
@@ -108,5 +111,20 @@ public class StudyService {
         study.setStuId(studyId);
         return studyMapper.selectByPrimaryKey(studyId).getStuPraiseNumber();
     }
-
+    /**
+     * @Author: ljd
+     * @Date: 2021/2/5 9:39
+     * @description: 检查学堂是否存在
+     **/
+    public boolean studyExist(Integer studyId){
+        return studyMapper.selectByPrimaryKey(studyId)==null;
+    }
+    /**
+     * @Author: ljd
+     * @Date: 2021/2/5 9:27
+     * @description: 检查学堂类型是否存在
+     **/
+    public boolean studyTypeIdExist(Integer studyTypeId){
+        return  typeMapper.selectByPrimaryKey(studyTypeId)==null;
+    }
 }
