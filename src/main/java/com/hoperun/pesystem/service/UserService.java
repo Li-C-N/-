@@ -39,6 +39,11 @@ public class UserService {
         }
         return false;
     }
+    /**
+     * @Author: ljd
+     * @Date: 2021/2/5 11:43
+     * @description: 通过token得到user对象
+     **/
     public  User getUserByToken(String token) {
         String PhoneNumber = TokenUtils.getUserphonenumber(token);
         return  this.userInfoByPhoneNumber(PhoneNumber).get(0);

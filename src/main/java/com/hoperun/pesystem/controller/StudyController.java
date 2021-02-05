@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 
 @Controller
@@ -39,6 +40,7 @@ public class StudyController {
         User user = userService.getUserByToken( request.getHeader("token"));
         if(studyId==null) {
             studyId=1;
+
         }
         if(!studyService.studyExist(studyId)) {
 //      返回学堂详情信息且增加学堂浏览记录
@@ -54,14 +56,14 @@ public class StudyController {
         return ResultDto.errorOf(CustomizeCode.STUDY_NOT_EXIST);
     }
 
-    @GetMapping("/praiseStudy/{studyId}")
+    @PostMapping("/praiseStudy")
     @ResponseBody
-    public ResultDto<?> praise (@RequestParam(value = "falg") Integer falg,
-                                              @PathVariable("studyId") Integer studyId,
+    public ResultDto<?> praise (@RequestParam("flag") Integer flag,
+                                              @RequestParam("studyId") Integer studyId,
                                               HttpServletRequest request){
         User user = userService.getUserByToken( request.getHeader("token"));
 
-        if(falg==1){
+        if(flag==1){
             if (studyService.praise(studyId, user.getUserId())) {
                 if (studyService.addStudyPraiseRecordCount(studyId)) {
                     return ResultDto.okOf(CustomizeCode.STUDY_PRAISE_OK);

@@ -32,6 +32,11 @@ public class StudyService {
         PageInfo<Study> pageInfo = new PageInfo<Study>(study);
         return pageInfo;
     }
+    /**
+     * @Author: ljd
+     * @Date: 2021/2/5 17:16
+     * @description: 根据学堂Id获取学堂详情
+     **/
     public Study queryStudyDetailsById(Integer studyId){
         StudyExample studyExample=new StudyExample();
         StudyExample.Criteria  criteria = studyExample.createCriteria();
@@ -49,14 +54,18 @@ public class StudyService {
         }
         return false;
     }
-//  用户浏览记录是否存在
+    /**
+     * @Author: ljd
+     * @Date: 2021/2/5 18:05
+     * @description: 用户记录是否存在
+     **/
     public Boolean userBrowseRecordIsExist(Integer studyId,Integer userId){
         Browse browse =new Browse();
         BrowseExample browseExample=new BrowseExample();
         BrowseExample.Criteria  criteria = browseExample.createCriteria();
         criteria.andBrowseTypeIdEqualTo(studyId);
         criteria.andBrowseUserIdEqualTo(userId);
-        return browseMapper.insert(browse)==1;
+        return browseMapper.selectByExample(browseExample).size()>0;
     }
 //  浏览数+1
     public Boolean addStudyBrowseRecordCount(Integer studyId){
@@ -95,14 +104,14 @@ public class StudyService {
     public Boolean addStudyPraiseRecordCount(Integer studyId){
         Study study =new Study();
         study.setStuId(studyId);
-        study.setStuBrowseNumber(quaryStudyPraiseNum(studyId)+1);
+        study.setStuPraiseNumber(quaryStudyPraiseNum(studyId)+1);
         return studyMapper.updateByPrimaryKeySelective(study)==1;
     }
 //  点赞数-1
     public Boolean subStudyPraiseRecordCount(Integer studyId){
         Study study =new Study();
         study.setStuId(studyId);
-        study.setStuBrowseNumber(quaryStudyPraiseNum(studyId)-1);
+        study.setStuPraiseNumber(quaryStudyPraiseNum(studyId)-1);
         return studyMapper.updateByPrimaryKeySelective(study)==1;
     }
 //  获取点赞数
