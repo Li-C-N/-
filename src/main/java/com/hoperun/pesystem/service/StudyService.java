@@ -31,8 +31,7 @@ public class StudyService {
      * @description:
      **/
     public PageInfo<StudyDto> queryStudyByPage(Integer pageNum, Integer pageSize, Integer type,Integer studyId) {
-        StudyDto  StudyDto =new StudyDto();
-        List<StudyDto>  StudyDtoList =new ArrayList<StudyDto>();
+        List<StudyDto>  StudyDtoList =new ArrayList<>();
         StudyExample studyExample=new StudyExample();
         StudyExample.Criteria  criteria = studyExample.createCriteria();
         criteria.andStuTypeIdEqualTo(type);
@@ -41,6 +40,7 @@ public class StudyService {
         List<Study> study = studyMapper.selectByExample(studyExample);
         HashSet<Integer> uerPraiseStudyId =this.queryUserPraiseStudy(studyId);
         for(Study s:study) {
+            StudyDto  StudyDto =new StudyDto();
             if (uerPraiseStudyId.contains(s.getStuId())){
                 StudyDto.setStudy(s);
                 StudyDto.setPraise(1);
@@ -52,8 +52,18 @@ public class StudyService {
                 StudyDto.setPraise(0);
                 StudyDtoList.add(StudyDto);
             }
-
+            System.out.println(StudyDto.getStudy().getStuId());
+            System.out.println(StudyDtoList.get(0).getStudy().getStuTitle());
         }
+//        System.out.println(StudyDtoList.get(0).getStudy().getStuTitle());
+//        System.out.println(StudyDtoList.get(1).getStudy().getStuTitle());
+//        System.out.println(StudyDtoList.get(2).getStudy().getStuTitle());
+//        System.out.println(StudyDtoList.get(3).getStudy().getStuTitle());
+//        System.out.println(StudyDtoList.get(4).getStudy().getStuTitle());
+//        System.out.println(StudyDtoList.get(5).getStudy().getStuTitle());
+//        System.out.println(StudyDtoList.get(6).getStudy().getStuTitle());
+//        System.out.println(StudyDtoList.get(7).getStudy().getStuTitle());
+
         PageInfo<StudyDto> pageInfo = new PageInfo<StudyDto>(StudyDtoList);
         return pageInfo;
     }
@@ -63,7 +73,6 @@ public class StudyService {
      * @description: 获取当前用户已点赞学堂列表
      **/
     public HashSet<Integer> queryUserPraiseStudy(Integer userId){
-//        List<Integer> uerPraiseStudyId=new ArrayList<Integer>();
         HashSet<Integer> uerPraiseStudyId = new HashSet<Integer>();
         PraiseExample praiseExample=new PraiseExample();
         PraiseExample.Criteria  criteria = praiseExample.createCriteria();
