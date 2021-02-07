@@ -10,6 +10,8 @@ import com.hoperun.pesystem.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 @Service
@@ -36,6 +38,25 @@ public class StudyService {
         List<Study> study = studyMapper.selectByExample(studyExample);
         PageInfo<Study> pageInfo = new PageInfo<Study>(study);
         return pageInfo;
+    }
+    /**
+     * @Author: ljd
+     * @Date: 2021/2/7 15:50
+     * @description: 获取当前用户已点赞学堂列表
+     **/
+    public HashSet<Integer> queryUserPraiseStudy(Integer userId){
+//        List<Integer> uerPraiseStudyId=new ArrayList<Integer>();
+        HashSet<Integer> uerPraiseStudyId = new HashSet<Integer>();
+        PraiseExample praiseExample=new PraiseExample();
+        PraiseExample.Criteria  criteria = praiseExample.createCriteria();
+        criteria.andPraiseUserIdEqualTo(userId);
+        List<Praise> uerPraise = praiseMapper.selectByExample(praiseExample);
+        for (Praise p: uerPraise)
+        {
+            uerPraiseStudyId.add(p.getPraiseTypeId());
+        }
+
+        return uerPraiseStudyId;
     }
     /**
      * @Author: ljd

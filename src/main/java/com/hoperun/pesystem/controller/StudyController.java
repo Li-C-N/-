@@ -2,6 +2,7 @@ package com.hoperun.pesystem.controller;
 
 import com.github.pagehelper.PageInfo;
 import com.hoperun.pesystem.dto.ResultDto;
+import com.hoperun.pesystem.dto.StudyDto;
 import com.hoperun.pesystem.enums.CustomizeCode;
 import com.hoperun.pesystem.model.Study;
 import com.hoperun.pesystem.model.User;
@@ -16,6 +17,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+
 @Api(tags = "学堂Controller")
 @Controller
 public class StudyController {
@@ -39,13 +44,31 @@ public class StudyController {
     )
     @GetMapping("/allStudy")
     @ResponseBody
-    public ResultDto<PageInfo<Study>> showActivityListByPage(@RequestParam(value = "studyTypeId",defaultValue = "1") Integer studyTypeId,
+    public ResultDto<List<StudyDto>> showActivityListByPage(@RequestParam(value = "studyTypeId",defaultValue = "1") Integer studyTypeId,
                                                                 @RequestParam(value = "pageNum" , defaultValue = "1") Integer pageNum,
-                                                                @RequestParam(value = "pageSize" ,defaultValue = "8") Integer pageSize){
+                                                                @RequestParam(value = "pageSize" ,defaultValue = "8") Integer pageSize,
+                                                             HttpServletRequest request){
 //      学堂分页列表
+        User userInfo = userService.getUserByToken( request.getHeader("token"));
+        StudyDto  StudyDto =new StudyDto();
+        List<StudyDto>  StudyDtoList =new ArrayList<StudyDto>();
         if(!studyService.studyTypeIdExist(studyTypeId)) {
+            HashSet<Integer> uerPraiseStudyId =studyService.queryUserPraiseStudy(userInfo.getUserId());
             PageInfo<Study> pageInfo = studyService.queryStudyByPage(pageNum, pageSize, studyTypeId);
-            return ResultDto.okWithData(CustomizeCode.STUDY_PAGEINFO_REQUEST_OK, pageInfo);
+            for(Study study:pageInfo.getList()) {
+                if (uerPraiseStudyId.contains(study.getStuId())){
+                    StudyDto.setStudy(study);
+                    StudyDto.setPraise(1);
+                    StudyDtoList.add(StudyDto);
+                }
+                else{
+                    StudyDto.setStudy(study);
+                    StudyDto.setPraise(0);
+                    StudyDtoList.add(StudyDto);
+                }
+
+            }
+            return ResultDto.okWithData(CustomizeCode.STUDY_PAGEINFO_REQUEST_OK, StudyDtoList);
         }
         return ResultDto.errorOf(CustomizeCode.STUDY_TYPE_NOT_EXIST);
     }
