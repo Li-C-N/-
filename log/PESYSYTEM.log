@@ -2273,3 +2273,145 @@ java.sql.SQLSyntaxErrorException: Unknown column 'goods_integral' in 'order clau
 2021-02-07 14:19:57.527 DEBUG 10808 --- [http-nio-8080-exec-2] c.h.p.m.ExchangeMapper.selectByExample   : ==>  Preparing: select ex_id, ex_goods_id, ex_time, ex_goods_name, ex_goods_integral, ex_num, ex_user_id from t_exchange WHERE ( ex_user_id = ? )
 2021-02-07 14:19:57.528 DEBUG 10808 --- [http-nio-8080-exec-2] c.h.p.m.ExchangeMapper.selectByExample   : ==> Parameters: 2(Integer)
 2021-02-07 14:19:57.554 DEBUG 10808 --- [http-nio-8080-exec-2] c.h.p.m.ExchangeMapper.selectByExample   : <==      Total: 1
+2021-02-07 14:22:07.045  INFO 10400 --- [restartedMain] c.hoperun.pesystem.PesystemApplication   : Starting PesystemApplication using Java 1.8.0_251 on NOTE170076 with PID 10400 (E:\Ideaproject\Points_Exchange_System\target\classes started by Administrator in E:\Ideaproject\Points_Exchange_System)
+2021-02-07 14:22:07.051  INFO 10400 --- [restartedMain] c.hoperun.pesystem.PesystemApplication   : No active profile set, falling back to default profiles: default
+2021-02-07 14:22:07.178  INFO 10400 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-02-07 14:22:07.178  INFO 10400 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-02-07 14:22:08.974  INFO 10400 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-02-07 14:22:08.983  INFO 10400 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-02-07 14:22:08.983  INFO 10400 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-02-07 14:22:09.062  INFO 10400 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-02-07 14:22:09.063  INFO 10400 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1882 ms
+2021-02-07 14:22:10.146  INFO 10400 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-02-07 14:22:10.153  INFO 10400 --- [restartedMain] c.hoperun.pesystem.config.SwaggerConfig  : ======================== 当前环境是否开启Swagger：true ========================
+2021-02-07 14:22:10.258  INFO 10400 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-07 14:22:10.303  INFO 10400 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-02-07 14:22:10.443  INFO 10400 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2021-02-07 14:22:10.519  INFO 10400 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-02-07 14:22:10.521  INFO 10400 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-02-07 14:22:10.537  INFO 10400 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-02-07 14:22:10.568  INFO 10400 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-02-07 14:22:10.789  INFO 10400 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: showActivityListByPageUsingGET_1
+2021-02-07 14:22:10.826  INFO 10400 --- [restartedMain] c.hoperun.pesystem.PesystemApplication   : Started PesystemApplication in 4.58 seconds (JVM running for 5.809)
+2021-02-07 14:28:57.627  INFO 10400 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-02-07 14:28:57.627  INFO 10400 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-02-07 14:28:57.629  INFO 10400 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-02-07 14:29:13.985  INFO 10400 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-02-07 14:29:14.554  INFO 10400 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-02-07 14:29:14.564 DEBUG 10400 --- [http-nio-8080-exec-2] c.h.p.mapper.UserMapper.selectByExample  : ==>  Preparing: select user_id, user_username, user_password, user_phone_number, user_caption_url, user_birthday, user_integral from t_user WHERE ( user_phone_number = ? )
+2021-02-07 14:29:14.586 DEBUG 10400 --- [http-nio-8080-exec-2] c.h.p.mapper.UserMapper.selectByExample  : ==> Parameters: 18792922021(String)
+2021-02-07 14:29:14.635 DEBUG 10400 --- [http-nio-8080-exec-2] c.h.p.mapper.UserMapper.selectByExample  : <==      Total: 1
+2021-02-07 14:29:14.644 DEBUG 10400 --- [http-nio-8080-exec-2] c.h.p.m.ExchangeMapper.selectByExample   : ==>  Preparing: select ex_id, ex_goods_id, ex_time, ex_goods_name, ex_goods_integral, ex_num, ex_user_id from t_exchange WHERE ( ex_user_id = ? )
+2021-02-07 14:29:14.645 DEBUG 10400 --- [http-nio-8080-exec-2] c.h.p.m.ExchangeMapper.selectByExample   : ==> Parameters: 2(Integer)
+2021-02-07 14:29:14.673 DEBUG 10400 --- [http-nio-8080-exec-2] c.h.p.m.ExchangeMapper.selectByExample   : <==      Total: 1
+2021-02-07 14:29:24.840 DEBUG 10400 --- [http-nio-8080-exec-3] c.h.p.mapper.UserMapper.selectByExample  : ==>  Preparing: select user_id, user_username, user_password, user_phone_number, user_caption_url, user_birthday, user_integral from t_user WHERE ( user_phone_number = ? )
+2021-02-07 14:29:24.840 DEBUG 10400 --- [http-nio-8080-exec-3] c.h.p.mapper.UserMapper.selectByExample  : ==> Parameters: 18792922021(String)
+2021-02-07 14:29:24.868 DEBUG 10400 --- [http-nio-8080-exec-3] c.h.p.mapper.UserMapper.selectByExample  : <==      Total: 1
+2021-02-07 14:29:24.870 DEBUG 10400 --- [http-nio-8080-exec-3] c.h.p.m.GoodsMapper.selectByPrimaryKey   : ==>  Preparing: select goods_id, goods_name, goods_type_id, goods_integral, goods_photo_index_big_url, goods_photo_index_sm_url, goods_photo_url, goods_start_time, goods_end_time, goods_introduce, goods_flag , goods_infromation from t_goods where goods_id = ?
+2021-02-07 14:29:24.870 DEBUG 10400 --- [http-nio-8080-exec-3] c.h.p.m.GoodsMapper.selectByPrimaryKey   : ==> Parameters: 2(Integer)
+2021-02-07 14:29:24.896 DEBUG 10400 --- [http-nio-8080-exec-3] c.h.p.m.GoodsMapper.selectByPrimaryKey   : <==      Total: 0
+2021-02-07 14:30:27.708 DEBUG 10400 --- [http-nio-8080-exec-7] c.h.p.mapper.UserMapper.selectByExample  : ==>  Preparing: select user_id, user_username, user_password, user_phone_number, user_caption_url, user_birthday, user_integral from t_user WHERE ( user_phone_number = ? )
+2021-02-07 14:30:27.709 DEBUG 10400 --- [http-nio-8080-exec-7] c.h.p.mapper.UserMapper.selectByExample  : ==> Parameters: 18792922021(String)
+2021-02-07 14:30:27.737 DEBUG 10400 --- [http-nio-8080-exec-7] c.h.p.mapper.UserMapper.selectByExample  : <==      Total: 1
+2021-02-07 14:30:27.738 DEBUG 10400 --- [http-nio-8080-exec-7] c.h.p.m.GoodsMapper.selectByPrimaryKey   : ==>  Preparing: select goods_id, goods_name, goods_type_id, goods_integral, goods_photo_index_big_url, goods_photo_index_sm_url, goods_photo_url, goods_start_time, goods_end_time, goods_introduce, goods_flag , goods_infromation from t_goods where goods_id = ?
+2021-02-07 14:30:27.738 DEBUG 10400 --- [http-nio-8080-exec-7] c.h.p.m.GoodsMapper.selectByPrimaryKey   : ==> Parameters: 6(Integer)
+2021-02-07 14:30:27.769 DEBUG 10400 --- [http-nio-8080-exec-7] c.h.p.m.GoodsMapper.selectByPrimaryKey   : <==      Total: 1
+2021-02-07 14:30:27.769 DEBUG 10400 --- [http-nio-8080-exec-7] c.h.p.m.GoodsMapper.selectByPrimaryKey   : ==>  Preparing: select goods_id, goods_name, goods_type_id, goods_integral, goods_photo_index_big_url, goods_photo_index_sm_url, goods_photo_url, goods_start_time, goods_end_time, goods_introduce, goods_flag , goods_infromation from t_goods where goods_id = ?
+2021-02-07 14:30:27.770 DEBUG 10400 --- [http-nio-8080-exec-7] c.h.p.m.GoodsMapper.selectByPrimaryKey   : ==> Parameters: 6(Integer)
+2021-02-07 14:30:27.798 DEBUG 10400 --- [http-nio-8080-exec-7] c.h.p.m.GoodsMapper.selectByPrimaryKey   : <==      Total: 1
+2021-02-07 14:30:27.801 DEBUG 10400 --- [http-nio-8080-exec-7] c.h.p.m.U.updateByPrimaryKeySelective    : ==>  Preparing: update t_user SET user_integral = ? where user_id = ?
+2021-02-07 14:30:27.801 DEBUG 10400 --- [http-nio-8080-exec-7] c.h.p.m.U.updateByPrimaryKeySelective    : ==> Parameters: 99959(Integer), 2(Integer)
+2021-02-07 14:30:27.857 DEBUG 10400 --- [http-nio-8080-exec-7] c.h.p.m.U.updateByPrimaryKeySelective    : <==    Updates: 1
+2021-02-07 14:30:27.858 DEBUG 10400 --- [http-nio-8080-exec-7] c.h.p.mapper.ExchangeMapper.insert       : ==>  Preparing: insert into t_exchange (ex_id, ex_goods_id, ex_time, ex_goods_name, ex_goods_integral, ex_num, ex_user_id) values (?, ?, ?, ?, ?, ?, ?)
+2021-02-07 14:30:27.862 DEBUG 10400 --- [http-nio-8080-exec-7] c.h.p.mapper.ExchangeMapper.insert       : ==> Parameters: null, 6(Integer), 2021-02-07 14:30:27.858(Timestamp), 商品名称2(String), 10(Integer), 3(Integer), 2(Integer)
+2021-02-07 14:30:27.918 DEBUG 10400 --- [http-nio-8080-exec-7] c.h.p.mapper.ExchangeMapper.insert       : <==    Updates: 1
+2021-02-07 14:30:42.409 DEBUG 10400 --- [http-nio-8080-exec-9] c.h.p.m.GoodsMapper.selectByPrimaryKey   : ==>  Preparing: select goods_id, goods_name, goods_type_id, goods_integral, goods_photo_index_big_url, goods_photo_index_sm_url, goods_photo_url, goods_start_time, goods_end_time, goods_introduce, goods_flag , goods_infromation from t_goods where goods_id = ?
+2021-02-07 14:30:42.409 DEBUG 10400 --- [http-nio-8080-exec-9] c.h.p.m.GoodsMapper.selectByPrimaryKey   : ==> Parameters: 6(Integer)
+2021-02-07 14:30:42.439 DEBUG 10400 --- [http-nio-8080-exec-9] c.h.p.m.GoodsMapper.selectByPrimaryKey   : <==      Total: 1
+2021-02-07 14:30:42.445 DEBUG 10400 --- [http-nio-8080-exec-9] c.h.p.m.GoodsMapper.selectByExample      : ==>  Preparing: select goods_id, goods_name, goods_type_id, goods_integral, goods_photo_index_big_url, goods_photo_index_sm_url, goods_photo_url, goods_start_time, goods_end_time, goods_introduce, goods_flag from t_goods WHERE ( goods_id = ? )
+2021-02-07 14:30:42.446 DEBUG 10400 --- [http-nio-8080-exec-9] c.h.p.m.GoodsMapper.selectByExample      : ==> Parameters: 6(Integer)
+2021-02-07 14:30:42.474 DEBUG 10400 --- [http-nio-8080-exec-9] c.h.p.m.GoodsMapper.selectByExample      : <==      Total: 1
+2021-02-07 14:31:03.759 DEBUG 10400 --- [http-nio-8080-exec-10] c.h.p.mapper.UserMapper.selectByExample  : ==>  Preparing: select user_id, user_username, user_password, user_phone_number, user_caption_url, user_birthday, user_integral from t_user WHERE ( user_phone_number = ? )
+2021-02-07 14:31:03.759 DEBUG 10400 --- [http-nio-8080-exec-10] c.h.p.mapper.UserMapper.selectByExample  : ==> Parameters: 18792922021(String)
+2021-02-07 14:31:03.787 DEBUG 10400 --- [http-nio-8080-exec-10] c.h.p.mapper.UserMapper.selectByExample  : <==      Total: 1
+2021-02-07 14:31:03.789 DEBUG 10400 --- [http-nio-8080-exec-10] c.h.p.m.ExchangeMapper.selectByExample   : ==>  Preparing: select ex_id, ex_goods_id, ex_time, ex_goods_name, ex_goods_integral, ex_num, ex_user_id from t_exchange WHERE ( ex_user_id = ? )
+2021-02-07 14:31:03.789 DEBUG 10400 --- [http-nio-8080-exec-10] c.h.p.m.ExchangeMapper.selectByExample   : ==> Parameters: 2(Integer)
+2021-02-07 14:31:03.816 DEBUG 10400 --- [http-nio-8080-exec-10] c.h.p.m.ExchangeMapper.selectByExample   : <==      Total: 2
+2021-02-07 14:31:29.825 DEBUG 10400 --- [http-nio-8080-exec-2] c.h.p.mapper.UserMapper.selectByExample  : ==>  Preparing: select user_id, user_username, user_password, user_phone_number, user_caption_url, user_birthday, user_integral from t_user WHERE ( user_phone_number = ? )
+2021-02-07 14:31:29.825 DEBUG 10400 --- [http-nio-8080-exec-2] c.h.p.mapper.UserMapper.selectByExample  : ==> Parameters: 18792922021(String)
+2021-02-07 14:31:29.853 DEBUG 10400 --- [http-nio-8080-exec-2] c.h.p.mapper.UserMapper.selectByExample  : <==      Total: 1
+2021-02-07 14:31:29.855 DEBUG 10400 --- [http-nio-8080-exec-2] c.h.p.m.StudyMapper.selectByPrimaryKey   : ==>  Preparing: select stu_id, stu_title, stu_introduce, stu_type_id, stu_browse_number, stu_praise_number, stu_photo_index_big_url, stu_photo_index_sm_url, stu_photo_url, stu_start_time, stu_end_time, stu_flag , stu_information from t_study where stu_id = ?
+2021-02-07 14:31:29.856 DEBUG 10400 --- [http-nio-8080-exec-2] c.h.p.m.StudyMapper.selectByPrimaryKey   : ==> Parameters: 4(Integer)
+2021-02-07 14:31:29.885 DEBUG 10400 --- [http-nio-8080-exec-2] c.h.p.m.StudyMapper.selectByPrimaryKey   : <==      Total: 1
+2021-02-07 14:31:29.890 DEBUG 10400 --- [http-nio-8080-exec-2] c.h.p.m.BrowseMapper.selectByExample     : ==>  Preparing: select browse_id, browse_type_id, browse_user_id from t_browse WHERE ( browse_type_id = ? and browse_user_id = ? )
+2021-02-07 14:31:29.891 DEBUG 10400 --- [http-nio-8080-exec-2] c.h.p.m.BrowseMapper.selectByExample     : ==> Parameters: 4(Integer), 2(Integer)
+2021-02-07 14:31:29.919 DEBUG 10400 --- [http-nio-8080-exec-2] c.h.p.m.BrowseMapper.selectByExample     : <==      Total: 0
+2021-02-07 14:31:29.921 DEBUG 10400 --- [http-nio-8080-exec-2] c.h.pesystem.mapper.BrowseMapper.insert  : ==>  Preparing: insert into t_browse (browse_id, browse_type_id, browse_user_id ) values (?, ?, ? )
+2021-02-07 14:31:29.923 DEBUG 10400 --- [http-nio-8080-exec-2] c.h.pesystem.mapper.BrowseMapper.insert  : ==> Parameters: null, 4(Integer), 2(Integer)
+2021-02-07 14:31:29.978 DEBUG 10400 --- [http-nio-8080-exec-2] c.h.pesystem.mapper.BrowseMapper.insert  : <==    Updates: 1
+2021-02-07 14:31:29.979 DEBUG 10400 --- [http-nio-8080-exec-2] c.h.p.m.StudyMapper.selectByPrimaryKey   : ==>  Preparing: select stu_id, stu_title, stu_introduce, stu_type_id, stu_browse_number, stu_praise_number, stu_photo_index_big_url, stu_photo_index_sm_url, stu_photo_url, stu_start_time, stu_end_time, stu_flag , stu_information from t_study where stu_id = ?
+2021-02-07 14:31:29.979 DEBUG 10400 --- [http-nio-8080-exec-2] c.h.p.m.StudyMapper.selectByPrimaryKey   : ==> Parameters: 4(Integer)
+2021-02-07 14:31:30.007 DEBUG 10400 --- [http-nio-8080-exec-2] c.h.p.m.StudyMapper.selectByPrimaryKey   : <==      Total: 1
+2021-02-07 14:31:30.010 DEBUG 10400 --- [http-nio-8080-exec-2] c.h.p.m.S.updateByPrimaryKeySelective    : ==>  Preparing: update t_study SET stu_browse_number = ? where stu_id = ?
+2021-02-07 14:31:30.011 DEBUG 10400 --- [http-nio-8080-exec-2] c.h.p.m.S.updateByPrimaryKeySelective    : ==> Parameters: 101(Integer), 4(Integer)
+2021-02-07 14:31:30.066 DEBUG 10400 --- [http-nio-8080-exec-2] c.h.p.m.S.updateByPrimaryKeySelective    : <==    Updates: 1
+2021-02-07 14:31:30.071 DEBUG 10400 --- [http-nio-8080-exec-2] c.h.p.m.StudyMapper.selectByExample      : ==>  Preparing: select stu_id, stu_title, stu_introduce, stu_type_id, stu_browse_number, stu_praise_number, stu_photo_index_big_url, stu_photo_index_sm_url, stu_photo_url, stu_start_time, stu_end_time, stu_flag from t_study WHERE ( stu_id = ? )
+2021-02-07 14:31:30.072 DEBUG 10400 --- [http-nio-8080-exec-2] c.h.p.m.StudyMapper.selectByExample      : ==> Parameters: 4(Integer)
+2021-02-07 14:31:30.101 DEBUG 10400 --- [http-nio-8080-exec-2] c.h.p.m.StudyMapper.selectByExample      : <==      Total: 1
+2021-02-07 14:31:48.929 DEBUG 10400 --- [http-nio-8080-exec-3] c.h.p.mapper.UserMapper.selectByExample  : ==>  Preparing: select user_id, user_username, user_password, user_phone_number, user_caption_url, user_birthday, user_integral from t_user WHERE ( user_phone_number = ? )
+2021-02-07 14:31:48.929 DEBUG 10400 --- [http-nio-8080-exec-3] c.h.p.mapper.UserMapper.selectByExample  : ==> Parameters: 18792922021(String)
+2021-02-07 14:31:48.957 DEBUG 10400 --- [http-nio-8080-exec-3] c.h.p.mapper.UserMapper.selectByExample  : <==      Total: 1
+2021-02-07 14:31:48.958 DEBUG 10400 --- [http-nio-8080-exec-3] c.h.pesystem.mapper.PraiseMapper.insert  : ==>  Preparing: insert into t_praise (praise_id, praise_type_id, praise_user_id ) values (?, ?, ? )
+2021-02-07 14:31:48.958 DEBUG 10400 --- [http-nio-8080-exec-3] c.h.pesystem.mapper.PraiseMapper.insert  : ==> Parameters: null, 6(Integer), 2(Integer)
+2021-02-07 14:31:49.012 DEBUG 10400 --- [http-nio-8080-exec-3] c.h.pesystem.mapper.PraiseMapper.insert  : <==    Updates: 1
+2021-02-07 14:31:49.013 DEBUG 10400 --- [http-nio-8080-exec-3] c.h.p.m.StudyMapper.selectByPrimaryKey   : ==>  Preparing: select stu_id, stu_title, stu_introduce, stu_type_id, stu_browse_number, stu_praise_number, stu_photo_index_big_url, stu_photo_index_sm_url, stu_photo_url, stu_start_time, stu_end_time, stu_flag , stu_information from t_study where stu_id = ?
+2021-02-07 14:31:49.014 DEBUG 10400 --- [http-nio-8080-exec-3] c.h.p.m.StudyMapper.selectByPrimaryKey   : ==> Parameters: 6(Integer)
+2021-02-07 14:31:49.041 DEBUG 10400 --- [http-nio-8080-exec-3] c.h.p.m.StudyMapper.selectByPrimaryKey   : <==      Total: 1
+2021-02-07 14:31:49.042 DEBUG 10400 --- [http-nio-8080-exec-3] c.h.p.m.S.updateByPrimaryKeySelective    : ==>  Preparing: update t_study SET stu_praise_number = ? where stu_id = ?
+2021-02-07 14:31:49.042 DEBUG 10400 --- [http-nio-8080-exec-3] c.h.p.m.S.updateByPrimaryKeySelective    : ==> Parameters: 101(Integer), 6(Integer)
+2021-02-07 14:31:49.099 DEBUG 10400 --- [http-nio-8080-exec-3] c.h.p.m.S.updateByPrimaryKeySelective    : <==    Updates: 1
+2021-02-07 14:32:09.236 DEBUG 10400 --- [http-nio-8080-exec-1] c.h.p.mapper.UserMapper.selectByExample  : ==>  Preparing: select user_id, user_username, user_password, user_phone_number, user_caption_url, user_birthday, user_integral from t_user WHERE ( user_phone_number = ? )
+2021-02-07 14:32:09.236 DEBUG 10400 --- [http-nio-8080-exec-1] c.h.p.mapper.UserMapper.selectByExample  : ==> Parameters: 18792922021(String)
+2021-02-07 14:32:09.267 DEBUG 10400 --- [http-nio-8080-exec-1] c.h.p.mapper.UserMapper.selectByExample  : <==      Total: 1
+2021-02-07 14:32:09.269 DEBUG 10400 --- [http-nio-8080-exec-1] c.h.p.m.StudyMapper.selectByPrimaryKey   : ==>  Preparing: select stu_id, stu_title, stu_introduce, stu_type_id, stu_browse_number, stu_praise_number, stu_photo_index_big_url, stu_photo_index_sm_url, stu_photo_url, stu_start_time, stu_end_time, stu_flag , stu_information from t_study where stu_id = ?
+2021-02-07 14:32:09.269 DEBUG 10400 --- [http-nio-8080-exec-1] c.h.p.m.StudyMapper.selectByPrimaryKey   : ==> Parameters: 6(Integer)
+2021-02-07 14:32:09.297 DEBUG 10400 --- [http-nio-8080-exec-1] c.h.p.m.StudyMapper.selectByPrimaryKey   : <==      Total: 1
+2021-02-07 14:32:09.300 DEBUG 10400 --- [http-nio-8080-exec-1] c.h.p.m.BrowseMapper.selectByExample     : ==>  Preparing: select browse_id, browse_type_id, browse_user_id from t_browse WHERE ( browse_type_id = ? and browse_user_id = ? )
+2021-02-07 14:32:09.300 DEBUG 10400 --- [http-nio-8080-exec-1] c.h.p.m.BrowseMapper.selectByExample     : ==> Parameters: 6(Integer), 2(Integer)
+2021-02-07 14:32:09.328 DEBUG 10400 --- [http-nio-8080-exec-1] c.h.p.m.BrowseMapper.selectByExample     : <==      Total: 0
+2021-02-07 14:32:09.328 DEBUG 10400 --- [http-nio-8080-exec-1] c.h.pesystem.mapper.BrowseMapper.insert  : ==>  Preparing: insert into t_browse (browse_id, browse_type_id, browse_user_id ) values (?, ?, ? )
+2021-02-07 14:32:09.329 DEBUG 10400 --- [http-nio-8080-exec-1] c.h.pesystem.mapper.BrowseMapper.insert  : ==> Parameters: null, 6(Integer), 2(Integer)
+2021-02-07 14:32:09.383 DEBUG 10400 --- [http-nio-8080-exec-1] c.h.pesystem.mapper.BrowseMapper.insert  : <==    Updates: 1
+2021-02-07 14:32:09.384 DEBUG 10400 --- [http-nio-8080-exec-1] c.h.p.m.StudyMapper.selectByPrimaryKey   : ==>  Preparing: select stu_id, stu_title, stu_introduce, stu_type_id, stu_browse_number, stu_praise_number, stu_photo_index_big_url, stu_photo_index_sm_url, stu_photo_url, stu_start_time, stu_end_time, stu_flag , stu_information from t_study where stu_id = ?
+2021-02-07 14:32:09.385 DEBUG 10400 --- [http-nio-8080-exec-1] c.h.p.m.StudyMapper.selectByPrimaryKey   : ==> Parameters: 6(Integer)
+2021-02-07 14:32:09.412 DEBUG 10400 --- [http-nio-8080-exec-1] c.h.p.m.StudyMapper.selectByPrimaryKey   : <==      Total: 1
+2021-02-07 14:32:09.414 DEBUG 10400 --- [http-nio-8080-exec-1] c.h.p.m.S.updateByPrimaryKeySelective    : ==>  Preparing: update t_study SET stu_browse_number = ? where stu_id = ?
+2021-02-07 14:32:09.415 DEBUG 10400 --- [http-nio-8080-exec-1] c.h.p.m.S.updateByPrimaryKeySelective    : ==> Parameters: 101(Integer), 6(Integer)
+2021-02-07 14:32:09.470 DEBUG 10400 --- [http-nio-8080-exec-1] c.h.p.m.S.updateByPrimaryKeySelective    : <==    Updates: 1
+2021-02-07 14:32:09.473 DEBUG 10400 --- [http-nio-8080-exec-1] c.h.p.m.StudyMapper.selectByExample      : ==>  Preparing: select stu_id, stu_title, stu_introduce, stu_type_id, stu_browse_number, stu_praise_number, stu_photo_index_big_url, stu_photo_index_sm_url, stu_photo_url, stu_start_time, stu_end_time, stu_flag from t_study WHERE ( stu_id = ? )
+2021-02-07 14:32:09.473 DEBUG 10400 --- [http-nio-8080-exec-1] c.h.p.m.StudyMapper.selectByExample      : ==> Parameters: 6(Integer)
+2021-02-07 14:32:09.502 DEBUG 10400 --- [http-nio-8080-exec-1] c.h.p.m.StudyMapper.selectByExample      : <==      Total: 1
+2021-02-07 14:33:02.621 DEBUG 10400 --- [http-nio-8080-exec-5] c.h.p.mapper.UserMapper.selectByExample  : ==>  Preparing: select user_id, user_username, user_password, user_phone_number, user_caption_url, user_birthday, user_integral from t_user WHERE ( user_phone_number = ? )
+2021-02-07 14:33:02.622 DEBUG 10400 --- [http-nio-8080-exec-5] c.h.p.mapper.UserMapper.selectByExample  : ==> Parameters: 18792922021(String)
+2021-02-07 14:33:02.649 DEBUG 10400 --- [http-nio-8080-exec-5] c.h.p.mapper.UserMapper.selectByExample  : <==      Total: 1
+2021-02-07 14:33:02.652 DEBUG 10400 --- [http-nio-8080-exec-5] c.h.p.m.PraiseMapper.deleteByExample     : ==>  Preparing: delete from t_praise WHERE ( praise_type_id = ? and praise_user_id = ? )
+2021-02-07 14:33:02.652 DEBUG 10400 --- [http-nio-8080-exec-5] c.h.p.m.PraiseMapper.deleteByExample     : ==> Parameters: 6(Integer), 2(Integer)
+2021-02-07 14:33:02.708 DEBUG 10400 --- [http-nio-8080-exec-5] c.h.p.m.PraiseMapper.deleteByExample     : <==    Updates: 1
+2021-02-07 14:33:02.708 DEBUG 10400 --- [http-nio-8080-exec-5] c.h.p.m.StudyMapper.selectByPrimaryKey   : ==>  Preparing: select stu_id, stu_title, stu_introduce, stu_type_id, stu_browse_number, stu_praise_number, stu_photo_index_big_url, stu_photo_index_sm_url, stu_photo_url, stu_start_time, stu_end_time, stu_flag , stu_information from t_study where stu_id = ?
+2021-02-07 14:33:02.709 DEBUG 10400 --- [http-nio-8080-exec-5] c.h.p.m.StudyMapper.selectByPrimaryKey   : ==> Parameters: 6(Integer)
+2021-02-07 14:33:02.737 DEBUG 10400 --- [http-nio-8080-exec-5] c.h.p.m.StudyMapper.selectByPrimaryKey   : <==      Total: 1
+2021-02-07 14:33:02.738 DEBUG 10400 --- [http-nio-8080-exec-5] c.h.p.m.S.updateByPrimaryKeySelective    : ==>  Preparing: update t_study SET stu_praise_number = ? where stu_id = ?
+2021-02-07 14:33:02.739 DEBUG 10400 --- [http-nio-8080-exec-5] c.h.p.m.S.updateByPrimaryKeySelective    : ==> Parameters: 100(Integer), 6(Integer)
+2021-02-07 14:33:02.794 DEBUG 10400 --- [http-nio-8080-exec-5] c.h.p.m.S.updateByPrimaryKeySelective    : <==    Updates: 1
+2021-02-07 14:33:58.517 DEBUG 10400 --- [http-nio-8080-exec-8] c.h.p.mapper.UserMapper.selectByExample  : ==>  Preparing: select user_id, user_username, user_password, user_phone_number, user_caption_url, user_birthday, user_integral from t_user WHERE ( user_phone_number = ? )
+2021-02-07 14:33:58.517 DEBUG 10400 --- [http-nio-8080-exec-8] c.h.p.mapper.UserMapper.selectByExample  : ==> Parameters: 18792922021(String)
+2021-02-07 14:33:58.544 DEBUG 10400 --- [http-nio-8080-exec-8] c.h.p.mapper.UserMapper.selectByExample  : <==      Total: 1
+2021-02-07 14:33:58.545 DEBUG 10400 --- [http-nio-8080-exec-8] c.h.p.m.StudyMapper.selectByPrimaryKey   : ==>  Preparing: select stu_id, stu_title, stu_introduce, stu_type_id, stu_browse_number, stu_praise_number, stu_photo_index_big_url, stu_photo_index_sm_url, stu_photo_url, stu_start_time, stu_end_time, stu_flag , stu_information from t_study where stu_id = ?
+2021-02-07 14:33:58.546 DEBUG 10400 --- [http-nio-8080-exec-8] c.h.p.m.StudyMapper.selectByPrimaryKey   : ==> Parameters: 6(Integer)
+2021-02-07 14:33:58.574 DEBUG 10400 --- [http-nio-8080-exec-8] c.h.p.m.StudyMapper.selectByPrimaryKey   : <==      Total: 1
+2021-02-07 14:33:58.576 DEBUG 10400 --- [http-nio-8080-exec-8] c.h.p.m.BrowseMapper.selectByExample     : ==>  Preparing: select browse_id, browse_type_id, browse_user_id from t_browse WHERE ( browse_type_id = ? and browse_user_id = ? )
+2021-02-07 14:33:58.576 DEBUG 10400 --- [http-nio-8080-exec-8] c.h.p.m.BrowseMapper.selectByExample     : ==> Parameters: 6(Integer), 2(Integer)
+2021-02-07 14:33:58.603 DEBUG 10400 --- [http-nio-8080-exec-8] c.h.p.m.BrowseMapper.selectByExample     : <==      Total: 1
+2021-02-07 14:33:58.605 DEBUG 10400 --- [http-nio-8080-exec-8] c.h.p.m.StudyMapper.selectByExample      : ==>  Preparing: select stu_id, stu_title, stu_introduce, stu_type_id, stu_browse_number, stu_praise_number, stu_photo_index_big_url, stu_photo_index_sm_url, stu_photo_url, stu_start_time, stu_end_time, stu_flag from t_study WHERE ( stu_id = ? )
+2021-02-07 14:33:58.605 DEBUG 10400 --- [http-nio-8080-exec-8] c.h.p.m.StudyMapper.selectByExample      : ==> Parameters: 6(Integer)
+2021-02-07 14:33:58.634 DEBUG 10400 --- [http-nio-8080-exec-8] c.h.p.m.StudyMapper.selectByExample      : <==      Total: 1
