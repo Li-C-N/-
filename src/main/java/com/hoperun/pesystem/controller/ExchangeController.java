@@ -7,12 +7,13 @@ import com.hoperun.pesystem.model.User;
 import com.hoperun.pesystem.service.ExchangeService;
 import com.hoperun.pesystem.service.GoodsService;
 import com.hoperun.pesystem.service.UserService;
+import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
-
+@Api(tags = "兑换Controller")
 @Controller
 public class ExchangeController {
     @Autowired
@@ -21,7 +22,14 @@ public class ExchangeController {
     private UserService userService;
     @Autowired
     private GoodsService goodsService;
-
+    @ApiOperation("商品兑换")
+    //@ApiImplicitParams：多个请求参数
+    @ApiImplicitParams(
+            value = {
+                    @ApiImplicitParam(name = "goodsId", value = "商品id", required = true, dataType = "String"),
+                    @ApiImplicitParam(name = "goodsNum", value = "商品数量", required = true, dataType = "String" ),
+            }
+    )
     @PostMapping("/allGoods/exchange")
     @ResponseBody
     public ResultDto<?> showGoodsListBy(@RequestParam(value = "goodsId") Integer goodsId,

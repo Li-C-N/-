@@ -22,18 +22,27 @@ public class IndexService {
         ActivityExample  activityExample=new ActivityExample();
         ActivityExample.Criteria  criteria = activityExample.createCriteria();
         criteria.andAFlagEqualTo(3);
+        activityExample.setOrderByClause("a_start_time desc");
+        activityExample.setStratNum(1);
+        activityExample.setEndNum(3);
         return activityMapper.selectByExample(activityExample);
     }
     public List<Goods> showHotInfoWithGoods(){
         GoodsExample goodsExample=new GoodsExample();
         GoodsExample.Criteria  criteria = goodsExample.createCriteria();
         criteria.andGoodsFlagEqualTo(3);
+        goodsExample.setOrderByClause("goods_integral desc");
+        goodsExample.setStratNum(1);
+        goodsExample.setEndNum(3);
         return goodsMapper.selectByExample(goodsExample);
     }
     public List<Study> showHotInfoWithStudy(){
         StudyExample  studyExample=new StudyExample();
         StudyExample.Criteria  criteria = studyExample.createCriteria();
         criteria.andStuFlagEqualTo(3);
+        studyExample.setOrderByClause("stu_browse_number desc");
+        studyExample.setStratNum(1);
+        studyExample.setEndNum(3);
         return studyMapper.selectByExample(studyExample);
     }
 }

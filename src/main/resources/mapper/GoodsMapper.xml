@@ -151,6 +151,9 @@
     <if test="orderByClause != null">
       order by ${orderByClause}
     </if>
+    <if test="startNum != null and endNum != null ">
+      limit #{startNum},#{endNum}
+    </if>
   </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
     <!--

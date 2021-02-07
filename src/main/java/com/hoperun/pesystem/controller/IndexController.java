@@ -6,6 +6,9 @@ import com.hoperun.pesystem.model.Activity;
 import com.hoperun.pesystem.model.Goods;
 import com.hoperun.pesystem.model.Study;
 import com.hoperun.pesystem.service.IndexService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,11 +17,16 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+@Api(tags = "主页Conytroller")
 @Controller
 public class IndexController {
     @Autowired
     private IndexService indexService;
+    @ApiOperation("系统主页")
+    //@ApiImplicitParams：多个请求参数
+    @ApiImplicitParams(
+            value = {}
+    )
     @PostMapping("/index")
     @ResponseBody
     public ResultDto<Map<String,Object>> indexInfo(){

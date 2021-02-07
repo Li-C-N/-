@@ -2,13 +2,10 @@ package com.hoperun.pesystem.controller;
 
 import com.hoperun.pesystem.dto.ResultDto;
 import com.hoperun.pesystem.enums.CustomizeCode;
-import com.hoperun.pesystem.mapper.ExchangeMapper;
 import com.hoperun.pesystem.model.Exchange;
-import com.hoperun.pesystem.model.ExchangeExample;
 import com.hoperun.pesystem.model.User;
 import com.hoperun.pesystem.service.UserService;
-import com.hoperun.pesystem.utils.TokenUtils;
-import org.apache.ibatis.jdbc.Null;
+import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,11 +16,16 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+@Api(tags = "个人信息Controller")
 @Controller
 public class UserController {
     @Autowired
     private UserService  userService;
+    @ApiOperation("个人信息中心")
+    //@ApiImplicitParams：多个请求参数
+    @ApiImplicitParams(
+            value = {}
+    )
          @PostMapping("/personInfo")
          @ResponseBody
        public ResultDto<?> persosnInfo( HttpServletRequest request)

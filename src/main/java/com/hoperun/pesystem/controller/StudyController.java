@@ -3,27 +3,43 @@ package com.hoperun.pesystem.controller;
 import com.github.pagehelper.PageInfo;
 import com.hoperun.pesystem.dto.ResultDto;
 import com.hoperun.pesystem.enums.CustomizeCode;
-import com.hoperun.pesystem.model.Activity;
 import com.hoperun.pesystem.model.Study;
 import com.hoperun.pesystem.model.User;
 import com.hoperun.pesystem.service.StudyService;
 import com.hoperun.pesystem.service.UserService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
-
+@Api(tags = "学堂Controller")
 @Controller
 public class StudyController {
     @Autowired
     private StudyService studyService;
     @Autowired
     private UserService userService;
+    /**
+     * @Author: ljd
+     * @Date: 2021/2/7 8:59
+     * @description: 学堂分页列表一览
+     **/
+    @ApiOperation("学堂类型分页列表")
+    //@ApiImplicitParams：多个请求参数
+    @ApiImplicitParams(
+            value = {
+                    @ApiImplicitParam(name = "studyTypeId", value = "学堂类型id", required = true, dataType = "String"),
+                    @ApiImplicitParam(name = "pageNum", value = "页码", required = true, dataType = "String" ,defaultValue = "1"),
+                    @ApiImplicitParam(name = "pageSize", value = "页长", required = true, dataType = "String", defaultValue = "8")
+            }
+    )
     @GetMapping("/allStudy")
     @ResponseBody
-    public ResultDto<PageInfo<Study>> showActivityListByPage(@RequestParam(value = "studyTypeId") Integer studyTypeId,
+    public ResultDto<PageInfo<Study>> showActivityListByPage(@RequestParam(value = "studyTypeId",defaultValue = "1") Integer studyTypeId,
                                                                 @RequestParam(value = "pageNum" , defaultValue = "1") Integer pageNum,
                                                                 @RequestParam(value = "pageSize" ,defaultValue = "8") Integer pageSize){
 //      学堂分页列表
@@ -33,6 +49,19 @@ public class StudyController {
         }
         return ResultDto.errorOf(CustomizeCode.STUDY_TYPE_NOT_EXIST);
     }
+
+    /**
+     * @Author: ljd
+     * @Date: 2021/2/7 9:00
+     * @description: 学堂详情
+     **/
+    @ApiOperation("学堂详情")
+    //@ApiImplicitParams：多个请求参数
+    @ApiImplicitParams(
+            value = {
+                    @ApiImplicitParam(name = "studyId", value = "活动id", required = true, dataType = "String"),
+            }
+    )
     @GetMapping("/allStudy/studyDetailsId={studyId}")
     @ResponseBody
     public  ResultDto<Study> showStudyDeatilsById(@PathVariable("studyId") Integer studyId,
@@ -55,7 +84,19 @@ public class StudyController {
         }
         return ResultDto.errorOf(CustomizeCode.STUDY_NOT_EXIST);
     }
-
+    /**
+     * @Author: ljd
+     * @Date: 2021/2/7 9:00
+     * @description: 学堂点赞
+     **/
+    @ApiOperation("学堂点赞/取消点赞")
+    //@ApiImplicitParams：多个请求参数
+    @ApiImplicitParams(
+            value = {
+                    @ApiImplicitParam(name = "flag", value = "点赞状态", required = true, dataType = "String"),
+                    @ApiImplicitParam(name = "studyId", value = "学堂id", required = true, dataType = "String"),
+            }
+    )
     @PostMapping("/praiseStudy")
     @ResponseBody
     public ResultDto<?> praise (@RequestParam("flag") Integer flag,

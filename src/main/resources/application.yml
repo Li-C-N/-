@@ -15,6 +15,17 @@ pagehelper:
   params: count=countSql
   helper-dialect: mysql
 
+
+swagger:
+  enabled: true
+  base-package: 'com.hoperun.pesystem.controller'
+  title: '会员积分兑换系统接口测试'
+  description: '基于Swagger构建的SpringBoot Api 文档'
+  version: '1.0'
+  contact:
+    name: 'PESystem'
+    url: ''
+    email: 'ljd2413@qq.com'
 # 开启 mybatis 驼峰标识
 mybatis:
   configuration:

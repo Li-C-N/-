@@ -4,12 +4,14 @@ import com.hoperun.pesystem.dto.ResultDto;
 import com.hoperun.pesystem.enums.CustomizeCode;
 import com.hoperun.pesystem.model.Type;
 import com.hoperun.pesystem.service.TypeService;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
+@Api(tags = "类型Controller")
 @Controller
 public class TypeController {
     @Autowired

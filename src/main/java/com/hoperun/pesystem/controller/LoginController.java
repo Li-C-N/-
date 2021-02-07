@@ -4,18 +4,29 @@ import com.hoperun.pesystem.enums.CustomizeCode;
 import com.hoperun.pesystem.service.LoginService;
 import com.hoperun.pesystem.service.RegisterService;
 import com.hoperun.pesystem.utils.TokenUtils;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-
+@Api(tags = "登录Controller")
 @Controller
 public class LoginController {
-
     @Autowired
     private LoginService loginService;
     @Autowired
     private RegisterService registerService;
+    @ApiOperation("用户登录")
+    //@ApiImplicitParams：多个请求参数
+    @ApiImplicitParams(
+            value = {
+                    @ApiImplicitParam(name = "phonenumber", value = "手机号码", required = true, dataType = "String"),
+                    @ApiImplicitParam(name = "password", value = "密码", required = true, dataType = "String")
+            }
+    )
         @PostMapping("/login")
         @ResponseBody
         public ResultDto<?> login(  @RequestParam("phonenumber") String phonenumber,

@@ -22,6 +22,11 @@ public class StudyService {
     private PraiseMapper praiseMapper;
     @Autowired
     private TypeMapper typeMapper;
+    /**
+     * @Author: ljd
+     * @Date: 2021/2/7 9:16
+     * @description:
+     **/
     public PageInfo<Study> queryStudyByPage(Integer pageNum, Integer pageSize, Integer type) {
         StudyExample studyExample=new StudyExample();
         StudyExample.Criteria  criteria = studyExample.createCriteria();
@@ -44,7 +49,11 @@ public class StudyService {
         List<Study> study = studyMapper.selectByExample(studyExample);
         return study.get(0);
     }
-//  新增用户浏览记录
+    /**
+     * @Author: ljd
+     * @Date: 2021/2/7 8:53
+     * @description: 新增用户浏览记录
+     **/
     public Boolean userBrowseRecord(Integer studyId,Integer userId){
         if(!userBrowseRecordIsExist(studyId,userId)){
             Browse browse =new Browse();
@@ -67,14 +76,22 @@ public class StudyService {
         criteria.andBrowseUserIdEqualTo(userId);
         return browseMapper.selectByExample(browseExample).size()>0;
     }
-//  浏览数+1
+   /**
+    * @Author: ljd
+    * @Date: 2021/2/7 8:54
+    * @description: 学堂浏览数+1
+    **/
     public Boolean addStudyBrowseRecordCount(Integer studyId){
         Study study =new Study();
         study.setStuId(studyId);
         study.setStuBrowseNumber(quaryStudyBrowseNum(studyId)+1);
         return studyMapper.updateByPrimaryKeySelective(study)==1;
     }
-//  获取浏览数
+    /**
+     * @Author: ljd
+     * @Date: 2021/2/7 8:54
+     * @description: 获取当前学堂浏览数
+     **/
     public Integer quaryStudyBrowseNum(Integer studyId){
         Study study =new Study();
         study.setStuId(studyId);
@@ -82,7 +99,11 @@ public class StudyService {
     }
 
 
-//  取消点赞删除记录
+    /**
+     * @Author: ljd
+     * @Date: 2021/2/7 8:55
+     * @description: 用户取消点赞（数据库删除点赞表记录）
+     **/
     public Boolean praiseCancel(Integer studyId,Integer userId){
         Praise Praise =new Praise();
         PraiseExample praiseExample=new PraiseExample();
@@ -92,7 +113,11 @@ public class StudyService {
         return praiseMapper.deleteByExample(praiseExample)==1;
     }
 
-//  点赞新增记录
+/**
+ * @Author: ljd
+ * @Date: 2021/2/7 8:56
+ * @description: 用户点赞（数据库新增点赞表记录）
+ **/
     public Boolean praise(Integer studyId,Integer userId){
         Praise Praise =new Praise();
         Praise.setPraiseUserId(userId);
@@ -100,21 +125,33 @@ public class StudyService {
         return praiseMapper.insert(Praise)==1;
     }
 
-//  点赞数+1
+    /**
+     * @Author: ljd
+     * @Date: 2021/2/7 8:57
+     * @description: 学堂点赞数+1
+     **/
     public Boolean addStudyPraiseRecordCount(Integer studyId){
         Study study =new Study();
         study.setStuId(studyId);
         study.setStuPraiseNumber(quaryStudyPraiseNum(studyId)+1);
         return studyMapper.updateByPrimaryKeySelective(study)==1;
     }
-//  点赞数-1
+    /**
+     * @Author: ljd
+     * @Date: 2021/2/7 8:57
+     * @description: 学堂点赞数-1
+     **/
     public Boolean subStudyPraiseRecordCount(Integer studyId){
         Study study =new Study();
         study.setStuId(studyId);
         study.setStuPraiseNumber(quaryStudyPraiseNum(studyId)-1);
         return studyMapper.updateByPrimaryKeySelective(study)==1;
     }
-//  获取点赞数
+    /**
+     * @Author: ljd
+     * @Date: 2021/2/7 8:57
+     * @description: 获取当前学堂点赞数
+     **/
     public Integer quaryStudyPraiseNum(Integer studyId){
         Study study =new Study();
         study.setStuId(studyId);
