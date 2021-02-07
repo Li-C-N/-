@@ -2415,3 +2415,865 @@ java.sql.SQLSyntaxErrorException: Unknown column 'goods_integral' in 'order clau
 2021-02-07 14:33:58.605 DEBUG 10400 --- [http-nio-8080-exec-8] c.h.p.m.StudyMapper.selectByExample      : ==>  Preparing: select stu_id, stu_title, stu_introduce, stu_type_id, stu_browse_number, stu_praise_number, stu_photo_index_big_url, stu_photo_index_sm_url, stu_photo_url, stu_start_time, stu_end_time, stu_flag from t_study WHERE ( stu_id = ? )
 2021-02-07 14:33:58.605 DEBUG 10400 --- [http-nio-8080-exec-8] c.h.p.m.StudyMapper.selectByExample      : ==> Parameters: 6(Integer)
 2021-02-07 14:33:58.634 DEBUG 10400 --- [http-nio-8080-exec-8] c.h.p.m.StudyMapper.selectByExample      : <==      Total: 1
+2021-02-07 14:57:30.858 DEBUG 10400 --- [http-nio-8080-exec-8] c.h.p.mapper.UserMapper.selectByExample  : ==>  Preparing: select user_id, user_username, user_password, user_phone_number, user_caption_url, user_birthday, user_integral from t_user WHERE ( user_phone_number = ? )
+2021-02-07 14:57:30.859 DEBUG 10400 --- [http-nio-8080-exec-8] c.h.p.mapper.UserMapper.selectByExample  : ==> Parameters: 18792922021(String)
+2021-02-07 14:57:30.886 DEBUG 10400 --- [http-nio-8080-exec-8] c.h.p.mapper.UserMapper.selectByExample  : <==      Total: 1
+2021-02-07 14:57:30.887 DEBUG 10400 --- [http-nio-8080-exec-8] c.h.pesystem.mapper.PraiseMapper.insert  : ==>  Preparing: insert into t_praise (praise_id, praise_type_id, praise_user_id ) values (?, ?, ? )
+2021-02-07 14:57:30.887 DEBUG 10400 --- [http-nio-8080-exec-8] c.h.pesystem.mapper.PraiseMapper.insert  : ==> Parameters: null, 6(Integer), 2(Integer)
+2021-02-07 14:57:30.942 DEBUG 10400 --- [http-nio-8080-exec-8] c.h.pesystem.mapper.PraiseMapper.insert  : <==    Updates: 1
+2021-02-07 14:57:30.943 DEBUG 10400 --- [http-nio-8080-exec-8] c.h.p.m.StudyMapper.selectByPrimaryKey   : ==>  Preparing: select stu_id, stu_title, stu_introduce, stu_type_id, stu_browse_number, stu_praise_number, stu_photo_index_big_url, stu_photo_index_sm_url, stu_photo_url, stu_start_time, stu_end_time, stu_flag , stu_information from t_study where stu_id = ?
+2021-02-07 14:57:30.944 DEBUG 10400 --- [http-nio-8080-exec-8] c.h.p.m.StudyMapper.selectByPrimaryKey   : ==> Parameters: 6(Integer)
+2021-02-07 14:57:30.972 DEBUG 10400 --- [http-nio-8080-exec-8] c.h.p.m.StudyMapper.selectByPrimaryKey   : <==      Total: 1
+2021-02-07 14:57:30.973 DEBUG 10400 --- [http-nio-8080-exec-8] c.h.p.m.S.updateByPrimaryKeySelective    : ==>  Preparing: update t_study SET stu_praise_number = ? where stu_id = ?
+2021-02-07 14:57:30.974 DEBUG 10400 --- [http-nio-8080-exec-8] c.h.p.m.S.updateByPrimaryKeySelective    : ==> Parameters: 101(Integer), 6(Integer)
+2021-02-07 14:57:31.031 DEBUG 10400 --- [http-nio-8080-exec-8] c.h.p.m.S.updateByPrimaryKeySelective    : <==    Updates: 1
+2021-02-07 14:59:30.533 DEBUG 10400 --- [http-nio-8080-exec-4] c.h.p.m.TypeMapper.selectByPrimaryKey    : ==>  Preparing: select type_id, type_flag, type_name from t_type where type_id = ?
+2021-02-07 14:59:30.533 DEBUG 10400 --- [http-nio-8080-exec-4] c.h.p.m.TypeMapper.selectByPrimaryKey    : ==> Parameters: 1(Integer)
+2021-02-07 14:59:30.560 DEBUG 10400 --- [http-nio-8080-exec-4] c.h.p.m.TypeMapper.selectByPrimaryKey    : <==      Total: 1
+2021-02-07 14:59:30.586 DEBUG 10400 --- [http-nio-8080-exec-4] c.h.p.m.S.selectByExample_COUNT          : ==>  Preparing: SELECT count(0) FROM t_study WHERE (stu_type_id = ? AND stu_flag = ?)
+2021-02-07 14:59:30.586 DEBUG 10400 --- [http-nio-8080-exec-4] c.h.p.m.S.selectByExample_COUNT          : ==> Parameters: 1(Integer), 0(Integer)
+2021-02-07 14:59:30.612 DEBUG 10400 --- [http-nio-8080-exec-4] c.h.p.m.S.selectByExample_COUNT          : <==      Total: 1
+2021-02-07 14:59:34.599 DEBUG 10400 --- [http-nio-8080-exec-7] c.h.p.m.TypeMapper.selectByPrimaryKey    : ==>  Preparing: select type_id, type_flag, type_name from t_type where type_id = ?
+2021-02-07 14:59:34.600 DEBUG 10400 --- [http-nio-8080-exec-7] c.h.p.m.TypeMapper.selectByPrimaryKey    : ==> Parameters: 3(Integer)
+2021-02-07 14:59:34.625 DEBUG 10400 --- [http-nio-8080-exec-7] c.h.p.m.TypeMapper.selectByPrimaryKey    : <==      Total: 1
+2021-02-07 14:59:34.627 DEBUG 10400 --- [http-nio-8080-exec-7] c.h.p.m.S.selectByExample_COUNT          : ==>  Preparing: SELECT count(0) FROM t_study WHERE (stu_type_id = ? AND stu_flag = ?)
+2021-02-07 14:59:34.628 DEBUG 10400 --- [http-nio-8080-exec-7] c.h.p.m.S.selectByExample_COUNT          : ==> Parameters: 3(Integer), 0(Integer)
+2021-02-07 14:59:34.654 DEBUG 10400 --- [http-nio-8080-exec-7] c.h.p.m.S.selectByExample_COUNT          : <==      Total: 1
+2021-02-07 14:59:34.656 DEBUG 10400 --- [http-nio-8080-exec-7] c.h.p.m.StudyMapper.selectByExample      : ==>  Preparing: select stu_id, stu_title, stu_introduce, stu_type_id, stu_browse_number, stu_praise_number, stu_photo_index_big_url, stu_photo_index_sm_url, stu_photo_url, stu_start_time, stu_end_time, stu_flag from t_study WHERE ( stu_type_id = ? and stu_flag = ? ) LIMIT ?
+2021-02-07 14:59:34.656 DEBUG 10400 --- [http-nio-8080-exec-7] c.h.p.m.StudyMapper.selectByExample      : ==> Parameters: 3(Integer), 0(Integer), 8(Integer)
+2021-02-07 14:59:34.686 DEBUG 10400 --- [http-nio-8080-exec-7] c.h.p.m.StudyMapper.selectByExample      : <==      Total: 8
+2021-02-07 16:24:26.314  INFO 8900 --- [restartedMain] c.hoperun.pesystem.PesystemApplication   : Starting PesystemApplication using Java 1.8.0_251 on NOTE170076 with PID 8900 (E:\Ideaproject\Points_Exchange_System\target\classes started by Administrator in E:\Ideaproject\Points_Exchange_System)
+2021-02-07 16:24:26.318  INFO 8900 --- [restartedMain] c.hoperun.pesystem.PesystemApplication   : No active profile set, falling back to default profiles: default
+2021-02-07 16:24:26.424  INFO 8900 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-02-07 16:24:26.424  INFO 8900 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-02-07 16:24:28.131  INFO 8900 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-02-07 16:24:28.140  INFO 8900 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-02-07 16:24:28.141  INFO 8900 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-02-07 16:24:28.214  INFO 8900 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-02-07 16:24:28.215  INFO 8900 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1789 ms
+2021-02-07 16:24:28.680  WARN 8900 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'activityController': Unsatisfied dependency expressed through field 'activityService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'activityService': Unsatisfied dependency expressed through field 'activityMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'activityMapper' defined in file [E:\Ideaproject\Points_Exchange_System\target\classes\com\hoperun\pesystem\mapper\ActivityMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com/hoperun/pesystem/dto/StudyDto.java'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com/hoperun/pesystem/dto/StudyDto.java
+2021-02-07 16:24:28.683  INFO 8900 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-02-07 16:24:28.695  INFO 8900 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-02-07 16:24:28.787 ERROR 8900 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'activityController': Unsatisfied dependency expressed through field 'activityService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'activityService': Unsatisfied dependency expressed through field 'activityMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'activityMapper' defined in file [E:\Ideaproject\Points_Exchange_System\target\classes\com\hoperun\pesystem\mapper\ActivityMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com/hoperun/pesystem/dto/StudyDto.java'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com/hoperun/pesystem/dto/StudyDto.java
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1415) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:608) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:944) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:923) ~[spring-context-5.3.3.jar:5.3.3]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:588) ~[spring-context-5.3.3.jar:5.3.3]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144) ~[spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:767) [spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759) [spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426) [spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326) [spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1311) [spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300) [spring-boot-2.4.2.jar:2.4.2]
+	at com.hoperun.pesystem.PesystemApplication.main(PesystemApplication.java:15) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_251]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_251]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_251]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_251]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.4.2.jar:2.4.2]
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'activityService': Unsatisfied dependency expressed through field 'activityMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'activityMapper' defined in file [E:\Ideaproject\Points_Exchange_System\target\classes\com\hoperun\pesystem\mapper\ActivityMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com/hoperun/pesystem/dto/StudyDto.java'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com/hoperun/pesystem/dto/StudyDto.java
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1415) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:608) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1380) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) ~[spring-beans-5.3.3.jar:5.3.3]
+	... 25 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'activityMapper' defined in file [E:\Ideaproject\Points_Exchange_System\target\classes\com\hoperun\pesystem\mapper\ActivityMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com/hoperun/pesystem/dto/StudyDto.java'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com/hoperun/pesystem/dto/StudyDto.java
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1518) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1401) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:608) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1380) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) ~[spring-beans-5.3.3.jar:5.3.3]
+	... 38 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com/hoperun/pesystem/dto/StudyDto.java'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com/hoperun/pesystem/dto/StudyDto.java
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1336) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1179) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:571) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1380) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1503) ~[spring-beans-5.3.3.jar:5.3.3]
+	... 49 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com/hoperun/pesystem/dto/StudyDto.java'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com/hoperun/pesystem/dto/StudyDto.java
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-5.3.3.jar:5.3.3]
+	... 62 common frames omitted
+Caused by: org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com/hoperun/pesystem/dto/StudyDto.java'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com/hoperun/pesystem/dto/StudyDto.java
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:613) ~[mybatis-spring-2.0.6.jar:2.0.6]
+	at org.mybatis.spring.SqlSessionFactoryBean.afterPropertiesSet(SqlSessionFactoryBean.java:491) ~[mybatis-spring-2.0.6.jar:2.0.6]
+	at org.mybatis.spring.SqlSessionFactoryBean.getObject(SqlSessionFactoryBean.java:633) ~[mybatis-spring-2.0.6.jar:2.0.6]
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration.sqlSessionFactory(MybatisAutoConfiguration.java:179) ~[mybatis-spring-boot-autoconfigure-2.1.4.jar:2.1.4]
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$bada8ec3.CGLIB$sqlSessionFactory$2(<generated>) ~[mybatis-spring-boot-autoconfigure-2.1.4.jar:2.1.4]
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$bada8ec3$$FastClassBySpringCGLIB$$4e715947.invoke(<generated>) ~[mybatis-spring-boot-autoconfigure-2.1.4.jar:2.1.4]
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244) ~[spring-core-5.3.3.jar:5.3.3]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331) ~[spring-context-5.3.3.jar:5.3.3]
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$bada8ec3.sqlSessionFactory(<generated>) ~[mybatis-spring-boot-autoconfigure-2.1.4.jar:2.1.4]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_251]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_251]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_251]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_251]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) ~[spring-beans-5.3.3.jar:5.3.3]
+	... 63 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com/hoperun/pesystem/dto/StudyDto.java'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com/hoperun/pesystem/dto/StudyDto.java
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:123) ~[mybatis-3.5.6.jar:3.5.6]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:95) ~[mybatis-3.5.6.jar:3.5.6]
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:611) ~[mybatis-spring-2.0.6.jar:2.0.6]
+	... 76 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com/hoperun/pesystem/dto/StudyDto.java'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com/hoperun/pesystem/dto/StudyDto.java
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:118) ~[mybatis-3.5.6.jar:3.5.6]
+	at org.apache.ibatis.builder.xml.XMLStatementBuilder.parseStatementNode(XMLStatementBuilder.java:102) ~[mybatis-3.5.6.jar:3.5.6]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:138) ~[mybatis-3.5.6.jar:3.5.6]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:131) ~[mybatis-3.5.6.jar:3.5.6]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:121) ~[mybatis-3.5.6.jar:3.5.6]
+	... 78 common frames omitted
+Caused by: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com/hoperun/pesystem/dto/StudyDto.java'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com/hoperun/pesystem/dto/StudyDto.java
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:120) ~[mybatis-3.5.6.jar:3.5.6]
+	at org.apache.ibatis.builder.BaseBuilder.resolveAlias(BaseBuilder.java:149) ~[mybatis-3.5.6.jar:3.5.6]
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:116) ~[mybatis-3.5.6.jar:3.5.6]
+	... 82 common frames omitted
+Caused by: java.lang.ClassNotFoundException: Cannot find class: com/hoperun/pesystem/dto/StudyDto.java
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:196) ~[mybatis-3.5.6.jar:3.5.6]
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:89) ~[mybatis-3.5.6.jar:3.5.6]
+	at org.apache.ibatis.io.Resources.classForName(Resources.java:261) ~[mybatis-3.5.6.jar:3.5.6]
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:116) ~[mybatis-3.5.6.jar:3.5.6]
+	... 84 common frames omitted
+
+2021-02-07 16:26:09.300  INFO 3880 --- [restartedMain] c.hoperun.pesystem.PesystemApplication   : Starting PesystemApplication using Java 1.8.0_251 on NOTE170076 with PID 3880 (E:\Ideaproject\Points_Exchange_System\target\classes started by Administrator in E:\Ideaproject\Points_Exchange_System)
+2021-02-07 16:26:09.304  INFO 3880 --- [restartedMain] c.hoperun.pesystem.PesystemApplication   : No active profile set, falling back to default profiles: default
+2021-02-07 16:26:09.407  INFO 3880 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-02-07 16:26:09.408  INFO 3880 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-02-07 16:26:10.937  INFO 3880 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-02-07 16:26:10.946  INFO 3880 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-02-07 16:26:10.946  INFO 3880 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-02-07 16:26:11.016  INFO 3880 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-02-07 16:26:11.017  INFO 3880 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1607 ms
+2021-02-07 16:26:11.486  WARN 3880 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'activityController': Unsatisfied dependency expressed through field 'activityService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'activityService': Unsatisfied dependency expressed through field 'activityMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'activityMapper' defined in file [E:\Ideaproject\Points_Exchange_System\target\classes\com\hoperun\pesystem\mapper\ActivityMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com/hoperun/pesystem/dto/StudyDto.java'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com/hoperun/pesystem/dto/StudyDto.java
+2021-02-07 16:26:11.489  INFO 3880 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-02-07 16:26:11.503  INFO 3880 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-02-07 16:26:11.529 ERROR 3880 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'activityController': Unsatisfied dependency expressed through field 'activityService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'activityService': Unsatisfied dependency expressed through field 'activityMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'activityMapper' defined in file [E:\Ideaproject\Points_Exchange_System\target\classes\com\hoperun\pesystem\mapper\ActivityMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com/hoperun/pesystem/dto/StudyDto.java'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com/hoperun/pesystem/dto/StudyDto.java
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1415) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:608) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:944) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:923) ~[spring-context-5.3.3.jar:5.3.3]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:588) ~[spring-context-5.3.3.jar:5.3.3]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144) ~[spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:767) [spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759) [spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426) [spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326) [spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1311) [spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300) [spring-boot-2.4.2.jar:2.4.2]
+	at com.hoperun.pesystem.PesystemApplication.main(PesystemApplication.java:15) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_251]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_251]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_251]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_251]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.4.2.jar:2.4.2]
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'activityService': Unsatisfied dependency expressed through field 'activityMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'activityMapper' defined in file [E:\Ideaproject\Points_Exchange_System\target\classes\com\hoperun\pesystem\mapper\ActivityMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com/hoperun/pesystem/dto/StudyDto.java'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com/hoperun/pesystem/dto/StudyDto.java
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1415) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:608) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1380) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) ~[spring-beans-5.3.3.jar:5.3.3]
+	... 25 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'activityMapper' defined in file [E:\Ideaproject\Points_Exchange_System\target\classes\com\hoperun\pesystem\mapper\ActivityMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com/hoperun/pesystem/dto/StudyDto.java'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com/hoperun/pesystem/dto/StudyDto.java
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1518) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1401) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:608) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1380) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) ~[spring-beans-5.3.3.jar:5.3.3]
+	... 38 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com/hoperun/pesystem/dto/StudyDto.java'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com/hoperun/pesystem/dto/StudyDto.java
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1336) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1179) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:571) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1380) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1503) ~[spring-beans-5.3.3.jar:5.3.3]
+	... 49 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com/hoperun/pesystem/dto/StudyDto.java'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com/hoperun/pesystem/dto/StudyDto.java
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-5.3.3.jar:5.3.3]
+	... 62 common frames omitted
+Caused by: org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com/hoperun/pesystem/dto/StudyDto.java'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com/hoperun/pesystem/dto/StudyDto.java
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:613) ~[mybatis-spring-2.0.6.jar:2.0.6]
+	at org.mybatis.spring.SqlSessionFactoryBean.afterPropertiesSet(SqlSessionFactoryBean.java:491) ~[mybatis-spring-2.0.6.jar:2.0.6]
+	at org.mybatis.spring.SqlSessionFactoryBean.getObject(SqlSessionFactoryBean.java:633) ~[mybatis-spring-2.0.6.jar:2.0.6]
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration.sqlSessionFactory(MybatisAutoConfiguration.java:179) ~[mybatis-spring-boot-autoconfigure-2.1.4.jar:2.1.4]
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$ed1d3597.CGLIB$sqlSessionFactory$2(<generated>) ~[mybatis-spring-boot-autoconfigure-2.1.4.jar:2.1.4]
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$ed1d3597$$FastClassBySpringCGLIB$$cde7b160.invoke(<generated>) ~[mybatis-spring-boot-autoconfigure-2.1.4.jar:2.1.4]
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244) ~[spring-core-5.3.3.jar:5.3.3]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331) ~[spring-context-5.3.3.jar:5.3.3]
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$ed1d3597.sqlSessionFactory(<generated>) ~[mybatis-spring-boot-autoconfigure-2.1.4.jar:2.1.4]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_251]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_251]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_251]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_251]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) ~[spring-beans-5.3.3.jar:5.3.3]
+	... 63 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com/hoperun/pesystem/dto/StudyDto.java'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com/hoperun/pesystem/dto/StudyDto.java
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:123) ~[mybatis-3.5.6.jar:3.5.6]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:95) ~[mybatis-3.5.6.jar:3.5.6]
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:611) ~[mybatis-spring-2.0.6.jar:2.0.6]
+	... 76 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com/hoperun/pesystem/dto/StudyDto.java'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com/hoperun/pesystem/dto/StudyDto.java
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:118) ~[mybatis-3.5.6.jar:3.5.6]
+	at org.apache.ibatis.builder.xml.XMLStatementBuilder.parseStatementNode(XMLStatementBuilder.java:102) ~[mybatis-3.5.6.jar:3.5.6]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:138) ~[mybatis-3.5.6.jar:3.5.6]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:131) ~[mybatis-3.5.6.jar:3.5.6]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:121) ~[mybatis-3.5.6.jar:3.5.6]
+	... 78 common frames omitted
+Caused by: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com/hoperun/pesystem/dto/StudyDto.java'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com/hoperun/pesystem/dto/StudyDto.java
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:120) ~[mybatis-3.5.6.jar:3.5.6]
+	at org.apache.ibatis.builder.BaseBuilder.resolveAlias(BaseBuilder.java:149) ~[mybatis-3.5.6.jar:3.5.6]
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:116) ~[mybatis-3.5.6.jar:3.5.6]
+	... 82 common frames omitted
+Caused by: java.lang.ClassNotFoundException: Cannot find class: com/hoperun/pesystem/dto/StudyDto.java
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:196) ~[mybatis-3.5.6.jar:3.5.6]
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:89) ~[mybatis-3.5.6.jar:3.5.6]
+	at org.apache.ibatis.io.Resources.classForName(Resources.java:261) ~[mybatis-3.5.6.jar:3.5.6]
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:116) ~[mybatis-3.5.6.jar:3.5.6]
+	... 84 common frames omitted
+
+2021-02-07 16:35:05.618  INFO 10700 --- [restartedMain] c.hoperun.pesystem.PesystemApplication   : Starting PesystemApplication using Java 1.8.0_251 on NOTE170076 with PID 10700 (E:\Ideaproject\Points_Exchange_System\target\classes started by Administrator in E:\Ideaproject\Points_Exchange_System)
+2021-02-07 16:35:05.623  INFO 10700 --- [restartedMain] c.hoperun.pesystem.PesystemApplication   : No active profile set, falling back to default profiles: default
+2021-02-07 16:35:05.723  INFO 10700 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-02-07 16:35:05.724  INFO 10700 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-02-07 16:35:08.341  INFO 10700 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-02-07 16:35:08.354  INFO 10700 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-02-07 16:35:08.355  INFO 10700 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-02-07 16:35:08.459  INFO 10700 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-02-07 16:35:08.460  INFO 10700 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2734 ms
+2021-02-07 16:35:09.285  WARN 10700 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'activityController': Unsatisfied dependency expressed through field 'activityService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'activityService': Unsatisfied dependency expressed through field 'activityMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'activityMapper' defined in file [E:\Ideaproject\Points_Exchange_System\target\classes\com\hoperun\pesystem\mapper\ActivityMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com/hoperun/pesystem/dto/StudyDto.java'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com/hoperun/pesystem/dto/StudyDto.java
+2021-02-07 16:35:09.288  INFO 10700 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-02-07 16:35:09.300  INFO 10700 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-02-07 16:35:09.327 ERROR 10700 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'activityController': Unsatisfied dependency expressed through field 'activityService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'activityService': Unsatisfied dependency expressed through field 'activityMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'activityMapper' defined in file [E:\Ideaproject\Points_Exchange_System\target\classes\com\hoperun\pesystem\mapper\ActivityMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com/hoperun/pesystem/dto/StudyDto.java'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com/hoperun/pesystem/dto/StudyDto.java
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1415) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:608) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:944) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:923) ~[spring-context-5.3.3.jar:5.3.3]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:588) ~[spring-context-5.3.3.jar:5.3.3]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144) ~[spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:767) [spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759) [spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426) [spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326) [spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1311) [spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300) [spring-boot-2.4.2.jar:2.4.2]
+	at com.hoperun.pesystem.PesystemApplication.main(PesystemApplication.java:15) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_251]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_251]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_251]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_251]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.4.2.jar:2.4.2]
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'activityService': Unsatisfied dependency expressed through field 'activityMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'activityMapper' defined in file [E:\Ideaproject\Points_Exchange_System\target\classes\com\hoperun\pesystem\mapper\ActivityMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com/hoperun/pesystem/dto/StudyDto.java'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com/hoperun/pesystem/dto/StudyDto.java
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1415) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:608) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1380) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) ~[spring-beans-5.3.3.jar:5.3.3]
+	... 25 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'activityMapper' defined in file [E:\Ideaproject\Points_Exchange_System\target\classes\com\hoperun\pesystem\mapper\ActivityMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com/hoperun/pesystem/dto/StudyDto.java'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com/hoperun/pesystem/dto/StudyDto.java
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1518) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1401) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:608) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1380) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) ~[spring-beans-5.3.3.jar:5.3.3]
+	... 38 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com/hoperun/pesystem/dto/StudyDto.java'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com/hoperun/pesystem/dto/StudyDto.java
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1336) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1179) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:571) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1380) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1503) ~[spring-beans-5.3.3.jar:5.3.3]
+	... 49 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com/hoperun/pesystem/dto/StudyDto.java'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com/hoperun/pesystem/dto/StudyDto.java
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-5.3.3.jar:5.3.3]
+	... 62 common frames omitted
+Caused by: org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com/hoperun/pesystem/dto/StudyDto.java'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com/hoperun/pesystem/dto/StudyDto.java
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:613) ~[mybatis-spring-2.0.6.jar:2.0.6]
+	at org.mybatis.spring.SqlSessionFactoryBean.afterPropertiesSet(SqlSessionFactoryBean.java:491) ~[mybatis-spring-2.0.6.jar:2.0.6]
+	at org.mybatis.spring.SqlSessionFactoryBean.getObject(SqlSessionFactoryBean.java:633) ~[mybatis-spring-2.0.6.jar:2.0.6]
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration.sqlSessionFactory(MybatisAutoConfiguration.java:179) ~[mybatis-spring-boot-autoconfigure-2.1.4.jar:2.1.4]
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$23032ffe.CGLIB$sqlSessionFactory$1(<generated>) ~[mybatis-spring-boot-autoconfigure-2.1.4.jar:2.1.4]
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$23032ffe$$FastClassBySpringCGLIB$$f7935a65.invoke(<generated>) ~[mybatis-spring-boot-autoconfigure-2.1.4.jar:2.1.4]
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244) ~[spring-core-5.3.3.jar:5.3.3]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331) ~[spring-context-5.3.3.jar:5.3.3]
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$23032ffe.sqlSessionFactory(<generated>) ~[mybatis-spring-boot-autoconfigure-2.1.4.jar:2.1.4]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_251]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_251]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_251]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_251]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) ~[spring-beans-5.3.3.jar:5.3.3]
+	... 63 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com/hoperun/pesystem/dto/StudyDto.java'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com/hoperun/pesystem/dto/StudyDto.java
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:123) ~[mybatis-3.5.6.jar:3.5.6]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:95) ~[mybatis-3.5.6.jar:3.5.6]
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:611) ~[mybatis-spring-2.0.6.jar:2.0.6]
+	... 76 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com/hoperun/pesystem/dto/StudyDto.java'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com/hoperun/pesystem/dto/StudyDto.java
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:118) ~[mybatis-3.5.6.jar:3.5.6]
+	at org.apache.ibatis.builder.xml.XMLStatementBuilder.parseStatementNode(XMLStatementBuilder.java:102) ~[mybatis-3.5.6.jar:3.5.6]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:138) ~[mybatis-3.5.6.jar:3.5.6]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:131) ~[mybatis-3.5.6.jar:3.5.6]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:121) ~[mybatis-3.5.6.jar:3.5.6]
+	... 78 common frames omitted
+Caused by: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com/hoperun/pesystem/dto/StudyDto.java'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com/hoperun/pesystem/dto/StudyDto.java
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:120) ~[mybatis-3.5.6.jar:3.5.6]
+	at org.apache.ibatis.builder.BaseBuilder.resolveAlias(BaseBuilder.java:149) ~[mybatis-3.5.6.jar:3.5.6]
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:116) ~[mybatis-3.5.6.jar:3.5.6]
+	... 82 common frames omitted
+Caused by: java.lang.ClassNotFoundException: Cannot find class: com/hoperun/pesystem/dto/StudyDto.java
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:196) ~[mybatis-3.5.6.jar:3.5.6]
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:89) ~[mybatis-3.5.6.jar:3.5.6]
+	at org.apache.ibatis.io.Resources.classForName(Resources.java:261) ~[mybatis-3.5.6.jar:3.5.6]
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:116) ~[mybatis-3.5.6.jar:3.5.6]
+	... 84 common frames omitted
+
+2021-02-07 17:17:06.361  INFO 10256 --- [restartedMain] c.hoperun.pesystem.PesystemApplication   : Starting PesystemApplication using Java 1.8.0_251 on NOTE170076 with PID 10256 (E:\Ideaproject\Points_Exchange_System\target\classes started by Administrator in E:\Ideaproject\Points_Exchange_System)
+2021-02-07 17:17:06.382  INFO 10256 --- [restartedMain] c.hoperun.pesystem.PesystemApplication   : No active profile set, falling back to default profiles: default
+2021-02-07 17:17:06.495  INFO 10256 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-02-07 17:17:06.495  INFO 10256 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-02-07 17:17:09.179  INFO 10256 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-02-07 17:17:09.190  INFO 10256 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-02-07 17:17:09.191  INFO 10256 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-02-07 17:17:09.279  INFO 10256 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-02-07 17:17:09.280  INFO 10256 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2784 ms
+2021-02-07 17:17:10.042  WARN 10256 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'activityController': Unsatisfied dependency expressed through field 'activityService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'activityService': Unsatisfied dependency expressed through field 'activityMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'activityMapper' defined in file [E:\Ideaproject\Points_Exchange_System\target\classes\com\hoperun\pesystem\mapper\ActivityMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com/hoperun/pesystem/dto/StudyDto.java'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com/hoperun/pesystem/dto/StudyDto.java
+2021-02-07 17:17:10.046  INFO 10256 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-02-07 17:17:10.059  INFO 10256 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-02-07 17:17:10.155 ERROR 10256 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'activityController': Unsatisfied dependency expressed through field 'activityService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'activityService': Unsatisfied dependency expressed through field 'activityMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'activityMapper' defined in file [E:\Ideaproject\Points_Exchange_System\target\classes\com\hoperun\pesystem\mapper\ActivityMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com/hoperun/pesystem/dto/StudyDto.java'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com/hoperun/pesystem/dto/StudyDto.java
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1415) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:608) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:944) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:923) ~[spring-context-5.3.3.jar:5.3.3]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:588) ~[spring-context-5.3.3.jar:5.3.3]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144) ~[spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:767) [spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759) [spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426) [spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326) [spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1311) [spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300) [spring-boot-2.4.2.jar:2.4.2]
+	at com.hoperun.pesystem.PesystemApplication.main(PesystemApplication.java:15) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_251]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_251]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_251]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_251]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.4.2.jar:2.4.2]
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'activityService': Unsatisfied dependency expressed through field 'activityMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'activityMapper' defined in file [E:\Ideaproject\Points_Exchange_System\target\classes\com\hoperun\pesystem\mapper\ActivityMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com/hoperun/pesystem/dto/StudyDto.java'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com/hoperun/pesystem/dto/StudyDto.java
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1415) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:608) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1380) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) ~[spring-beans-5.3.3.jar:5.3.3]
+	... 25 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'activityMapper' defined in file [E:\Ideaproject\Points_Exchange_System\target\classes\com\hoperun\pesystem\mapper\ActivityMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com/hoperun/pesystem/dto/StudyDto.java'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com/hoperun/pesystem/dto/StudyDto.java
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1518) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1401) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:608) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1380) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) ~[spring-beans-5.3.3.jar:5.3.3]
+	... 38 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com/hoperun/pesystem/dto/StudyDto.java'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com/hoperun/pesystem/dto/StudyDto.java
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1336) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1179) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:571) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1380) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1503) ~[spring-beans-5.3.3.jar:5.3.3]
+	... 49 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com/hoperun/pesystem/dto/StudyDto.java'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com/hoperun/pesystem/dto/StudyDto.java
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-5.3.3.jar:5.3.3]
+	... 62 common frames omitted
+Caused by: org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com/hoperun/pesystem/dto/StudyDto.java'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com/hoperun/pesystem/dto/StudyDto.java
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:613) ~[mybatis-spring-2.0.6.jar:2.0.6]
+	at org.mybatis.spring.SqlSessionFactoryBean.afterPropertiesSet(SqlSessionFactoryBean.java:491) ~[mybatis-spring-2.0.6.jar:2.0.6]
+	at org.mybatis.spring.SqlSessionFactoryBean.getObject(SqlSessionFactoryBean.java:633) ~[mybatis-spring-2.0.6.jar:2.0.6]
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration.sqlSessionFactory(MybatisAutoConfiguration.java:179) ~[mybatis-spring-boot-autoconfigure-2.1.4.jar:2.1.4]
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$ecad7822.CGLIB$sqlSessionFactory$1(<generated>) ~[mybatis-spring-boot-autoconfigure-2.1.4.jar:2.1.4]
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$ecad7822$$FastClassBySpringCGLIB$$eaebefd0.invoke(<generated>) ~[mybatis-spring-boot-autoconfigure-2.1.4.jar:2.1.4]
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244) ~[spring-core-5.3.3.jar:5.3.3]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331) ~[spring-context-5.3.3.jar:5.3.3]
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$ecad7822.sqlSessionFactory(<generated>) ~[mybatis-spring-boot-autoconfigure-2.1.4.jar:2.1.4]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_251]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_251]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_251]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_251]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) ~[spring-beans-5.3.3.jar:5.3.3]
+	... 63 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com/hoperun/pesystem/dto/StudyDto.java'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com/hoperun/pesystem/dto/StudyDto.java
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:123) ~[mybatis-3.5.6.jar:3.5.6]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:95) ~[mybatis-3.5.6.jar:3.5.6]
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:611) ~[mybatis-spring-2.0.6.jar:2.0.6]
+	... 76 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com/hoperun/pesystem/dto/StudyDto.java'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com/hoperun/pesystem/dto/StudyDto.java
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:118) ~[mybatis-3.5.6.jar:3.5.6]
+	at org.apache.ibatis.builder.xml.XMLStatementBuilder.parseStatementNode(XMLStatementBuilder.java:102) ~[mybatis-3.5.6.jar:3.5.6]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:138) ~[mybatis-3.5.6.jar:3.5.6]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:131) ~[mybatis-3.5.6.jar:3.5.6]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:121) ~[mybatis-3.5.6.jar:3.5.6]
+	... 78 common frames omitted
+Caused by: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com/hoperun/pesystem/dto/StudyDto.java'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com/hoperun/pesystem/dto/StudyDto.java
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:120) ~[mybatis-3.5.6.jar:3.5.6]
+	at org.apache.ibatis.builder.BaseBuilder.resolveAlias(BaseBuilder.java:149) ~[mybatis-3.5.6.jar:3.5.6]
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:116) ~[mybatis-3.5.6.jar:3.5.6]
+	... 82 common frames omitted
+Caused by: java.lang.ClassNotFoundException: Cannot find class: com/hoperun/pesystem/dto/StudyDto.java
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:196) ~[mybatis-3.5.6.jar:3.5.6]
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:89) ~[mybatis-3.5.6.jar:3.5.6]
+	at org.apache.ibatis.io.Resources.classForName(Resources.java:261) ~[mybatis-3.5.6.jar:3.5.6]
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:116) ~[mybatis-3.5.6.jar:3.5.6]
+	... 84 common frames omitted
+
+2021-02-07 17:17:31.423  INFO 10768 --- [restartedMain] c.hoperun.pesystem.PesystemApplication   : Starting PesystemApplication using Java 1.8.0_251 on NOTE170076 with PID 10768 (E:\Ideaproject\Points_Exchange_System\target\classes started by Administrator in E:\Ideaproject\Points_Exchange_System)
+2021-02-07 17:17:31.428  INFO 10768 --- [restartedMain] c.hoperun.pesystem.PesystemApplication   : No active profile set, falling back to default profiles: default
+2021-02-07 17:17:31.512  INFO 10768 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-02-07 17:17:31.512  INFO 10768 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-02-07 17:17:33.365  INFO 10768 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-02-07 17:17:33.379  INFO 10768 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-02-07 17:17:33.379  INFO 10768 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-02-07 17:17:33.472  INFO 10768 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-02-07 17:17:33.472  INFO 10768 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1958 ms
+2021-02-07 17:17:34.103  WARN 10768 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'activityController': Unsatisfied dependency expressed through field 'activityService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'activityService': Unsatisfied dependency expressed through field 'activityMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'activityMapper' defined in file [E:\Ideaproject\Points_Exchange_System\target\classes\com\hoperun\pesystem\mapper\ActivityMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com/hoperun/pesystem/dto/StudyDto.java'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com/hoperun/pesystem/dto/StudyDto.java
+2021-02-07 17:17:34.108  INFO 10768 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-02-07 17:17:34.125  INFO 10768 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-02-07 17:17:34.234 ERROR 10768 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'activityController': Unsatisfied dependency expressed through field 'activityService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'activityService': Unsatisfied dependency expressed through field 'activityMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'activityMapper' defined in file [E:\Ideaproject\Points_Exchange_System\target\classes\com\hoperun\pesystem\mapper\ActivityMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com/hoperun/pesystem/dto/StudyDto.java'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com/hoperun/pesystem/dto/StudyDto.java
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1415) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:608) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:944) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:923) ~[spring-context-5.3.3.jar:5.3.3]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:588) ~[spring-context-5.3.3.jar:5.3.3]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144) ~[spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:767) [spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759) [spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426) [spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326) [spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1311) [spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300) [spring-boot-2.4.2.jar:2.4.2]
+	at com.hoperun.pesystem.PesystemApplication.main(PesystemApplication.java:15) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_251]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_251]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_251]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_251]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.4.2.jar:2.4.2]
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'activityService': Unsatisfied dependency expressed through field 'activityMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'activityMapper' defined in file [E:\Ideaproject\Points_Exchange_System\target\classes\com\hoperun\pesystem\mapper\ActivityMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com/hoperun/pesystem/dto/StudyDto.java'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com/hoperun/pesystem/dto/StudyDto.java
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1415) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:608) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1380) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) ~[spring-beans-5.3.3.jar:5.3.3]
+	... 25 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'activityMapper' defined in file [E:\Ideaproject\Points_Exchange_System\target\classes\com\hoperun\pesystem\mapper\ActivityMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com/hoperun/pesystem/dto/StudyDto.java'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com/hoperun/pesystem/dto/StudyDto.java
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1518) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1401) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:608) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1380) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) ~[spring-beans-5.3.3.jar:5.3.3]
+	... 38 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com/hoperun/pesystem/dto/StudyDto.java'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com/hoperun/pesystem/dto/StudyDto.java
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1336) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1179) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:571) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1380) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1503) ~[spring-beans-5.3.3.jar:5.3.3]
+	... 49 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com/hoperun/pesystem/dto/StudyDto.java'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com/hoperun/pesystem/dto/StudyDto.java
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-5.3.3.jar:5.3.3]
+	... 62 common frames omitted
+Caused by: org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com/hoperun/pesystem/dto/StudyDto.java'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com/hoperun/pesystem/dto/StudyDto.java
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:613) ~[mybatis-spring-2.0.6.jar:2.0.6]
+	at org.mybatis.spring.SqlSessionFactoryBean.afterPropertiesSet(SqlSessionFactoryBean.java:491) ~[mybatis-spring-2.0.6.jar:2.0.6]
+	at org.mybatis.spring.SqlSessionFactoryBean.getObject(SqlSessionFactoryBean.java:633) ~[mybatis-spring-2.0.6.jar:2.0.6]
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration.sqlSessionFactory(MybatisAutoConfiguration.java:179) ~[mybatis-spring-boot-autoconfigure-2.1.4.jar:2.1.4]
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$a2944cb1.CGLIB$sqlSessionFactory$2(<generated>) ~[mybatis-spring-boot-autoconfigure-2.1.4.jar:2.1.4]
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$a2944cb1$$FastClassBySpringCGLIB$$e46eedf8.invoke(<generated>) ~[mybatis-spring-boot-autoconfigure-2.1.4.jar:2.1.4]
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244) ~[spring-core-5.3.3.jar:5.3.3]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331) ~[spring-context-5.3.3.jar:5.3.3]
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$a2944cb1.sqlSessionFactory(<generated>) ~[mybatis-spring-boot-autoconfigure-2.1.4.jar:2.1.4]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_251]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_251]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_251]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_251]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) ~[spring-beans-5.3.3.jar:5.3.3]
+	... 63 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [E:\Ideaproject\Points_Exchange_System\target\classes\mapper\StudyMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com/hoperun/pesystem/dto/StudyDto.java'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com/hoperun/pesystem/dto/StudyDto.java
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:123) ~[mybatis-3.5.6.jar:3.5.6]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:95) ~[mybatis-3.5.6.jar:3.5.6]
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:611) ~[mybatis-spring-2.0.6.jar:2.0.6]
+	... 76 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com/hoperun/pesystem/dto/StudyDto.java'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com/hoperun/pesystem/dto/StudyDto.java
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:118) ~[mybatis-3.5.6.jar:3.5.6]
+	at org.apache.ibatis.builder.xml.XMLStatementBuilder.parseStatementNode(XMLStatementBuilder.java:102) ~[mybatis-3.5.6.jar:3.5.6]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:138) ~[mybatis-3.5.6.jar:3.5.6]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:131) ~[mybatis-3.5.6.jar:3.5.6]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:121) ~[mybatis-3.5.6.jar:3.5.6]
+	... 78 common frames omitted
+Caused by: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com/hoperun/pesystem/dto/StudyDto.java'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com/hoperun/pesystem/dto/StudyDto.java
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:120) ~[mybatis-3.5.6.jar:3.5.6]
+	at org.apache.ibatis.builder.BaseBuilder.resolveAlias(BaseBuilder.java:149) ~[mybatis-3.5.6.jar:3.5.6]
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:116) ~[mybatis-3.5.6.jar:3.5.6]
+	... 82 common frames omitted
+Caused by: java.lang.ClassNotFoundException: Cannot find class: com/hoperun/pesystem/dto/StudyDto.java
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:196) ~[mybatis-3.5.6.jar:3.5.6]
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:89) ~[mybatis-3.5.6.jar:3.5.6]
+	at org.apache.ibatis.io.Resources.classForName(Resources.java:261) ~[mybatis-3.5.6.jar:3.5.6]
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:116) ~[mybatis-3.5.6.jar:3.5.6]
+	... 84 common frames omitted
+
+2021-02-07 17:22:04.690  INFO 12976 --- [restartedMain] c.hoperun.pesystem.PesystemApplication   : Starting PesystemApplication using Java 1.8.0_251 on NOTE170076 with PID 12976 (E:\Ideaproject\Points_Exchange_System\target\classes started by Administrator in E:\Ideaproject\Points_Exchange_System)
+2021-02-07 17:22:04.693  INFO 12976 --- [restartedMain] c.hoperun.pesystem.PesystemApplication   : No active profile set, falling back to default profiles: default
+2021-02-07 17:22:04.793  INFO 12976 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-02-07 17:22:04.795  INFO 12976 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-02-07 17:22:06.513  INFO 12976 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-02-07 17:22:06.523  INFO 12976 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-02-07 17:22:06.523  INFO 12976 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-02-07 17:22:06.599  INFO 12976 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-02-07 17:22:06.599  INFO 12976 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1794 ms
+2021-02-07 17:22:08.044  INFO 12976 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-02-07 17:22:08.056  INFO 12976 --- [restartedMain] c.hoperun.pesystem.config.SwaggerConfig  : ======================== 当前环境是否开启Swagger：true ========================
+2021-02-07 17:22:08.174  INFO 12976 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-07 17:22:08.224  INFO 12976 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-02-07 17:22:08.413  INFO 12976 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2021-02-07 17:22:08.511  WARN 12976 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2021-02-07 17:22:08.514  INFO 12976 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2021-02-07 17:22:08.515  INFO 12976 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-02-07 17:22:08.520  INFO 12976 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-02-07 17:22:08.531  INFO 12976 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-02-07 17:22:08.547 ERROR 12976 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2021-02-07 17:22:41.987  INFO 13036 --- [restartedMain] c.hoperun.pesystem.PesystemApplication   : Starting PesystemApplication using Java 1.8.0_251 on NOTE170076 with PID 13036 (E:\Ideaproject\Points_Exchange_System\target\classes started by Administrator in E:\Ideaproject\Points_Exchange_System)
+2021-02-07 17:22:41.994  INFO 13036 --- [restartedMain] c.hoperun.pesystem.PesystemApplication   : No active profile set, falling back to default profiles: default
+2021-02-07 17:22:42.092  INFO 13036 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-02-07 17:22:42.093  INFO 13036 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-02-07 17:22:43.769  INFO 13036 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-02-07 17:22:43.778  INFO 13036 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-02-07 17:22:43.778  INFO 13036 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-02-07 17:22:43.853  INFO 13036 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-02-07 17:22:43.853  INFO 13036 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1759 ms
+2021-02-07 17:22:44.879  INFO 13036 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-02-07 17:22:44.886  INFO 13036 --- [restartedMain] c.hoperun.pesystem.config.SwaggerConfig  : ======================== 当前环境是否开启Swagger：true ========================
+2021-02-07 17:22:44.982  INFO 13036 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-07 17:22:45.023  INFO 13036 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-02-07 17:22:45.163  INFO 13036 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2021-02-07 17:22:45.292  INFO 13036 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-02-07 17:22:45.294  INFO 13036 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-02-07 17:22:45.358  INFO 13036 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-02-07 17:22:45.416  INFO 13036 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-02-07 17:22:45.706  INFO 13036 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: showActivityListByPageUsingGET_1
+2021-02-07 17:22:45.746  INFO 13036 --- [restartedMain] c.hoperun.pesystem.PesystemApplication   : Started PesystemApplication in 4.458 seconds (JVM running for 5.967)
+2021-02-07 17:22:52.012  INFO 13036 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-02-07 17:22:52.012  INFO 13036 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-02-07 17:22:52.014  INFO 13036 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-02-07 17:24:05.889  INFO 13036 --- [http-nio-8080-exec-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-02-07 17:24:06.959  INFO 13036 --- [http-nio-8080-exec-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-02-07 17:24:06.984 DEBUG 13036 --- [http-nio-8080-exec-9] c.h.p.mapper.UserMapper.selectByExample  : ==>  Preparing: select user_id, user_username, user_password, user_phone_number, user_caption_url, user_birthday, user_integral from t_user WHERE ( user_phone_number = ? )
+2021-02-07 17:24:07.076 DEBUG 13036 --- [http-nio-8080-exec-9] c.h.p.mapper.UserMapper.selectByExample  : ==> Parameters: 18792922021(String)
+2021-02-07 17:24:07.145 DEBUG 13036 --- [http-nio-8080-exec-9] c.h.p.mapper.UserMapper.selectByExample  : <==      Total: 1
+2021-02-07 17:24:07.154 DEBUG 13036 --- [http-nio-8080-exec-9] c.h.p.m.TypeMapper.selectByPrimaryKey    : ==>  Preparing: select type_id, type_flag, type_name from t_type where type_id = ?
+2021-02-07 17:24:07.154 DEBUG 13036 --- [http-nio-8080-exec-9] c.h.p.m.TypeMapper.selectByPrimaryKey    : ==> Parameters: 1(Integer)
+2021-02-07 17:24:07.187 DEBUG 13036 --- [http-nio-8080-exec-9] c.h.p.m.TypeMapper.selectByPrimaryKey    : <==      Total: 1
+2021-02-07 17:24:07.195 DEBUG 13036 --- [http-nio-8080-exec-9] c.h.p.m.PraiseMapper.selectByExample     : ==>  Preparing: select praise_id, praise_type_id, praise_user_id from t_praise WHERE ( praise_user_id = ? )
+2021-02-07 17:24:07.196 DEBUG 13036 --- [http-nio-8080-exec-9] c.h.p.m.PraiseMapper.selectByExample     : ==> Parameters: 2(Integer)
+2021-02-07 17:24:07.229 DEBUG 13036 --- [http-nio-8080-exec-9] c.h.p.m.PraiseMapper.selectByExample     : <==      Total: 1
+2021-02-07 17:24:07.301 DEBUG 13036 --- [http-nio-8080-exec-9] c.h.p.m.S.selectByExample_COUNT          : ==>  Preparing: SELECT count(0) FROM t_study WHERE (stu_type_id = ? AND stu_flag = ?)
+2021-02-07 17:24:07.301 DEBUG 13036 --- [http-nio-8080-exec-9] c.h.p.m.S.selectByExample_COUNT          : ==> Parameters: 1(Integer), 0(Integer)
+2021-02-07 17:24:07.334 DEBUG 13036 --- [http-nio-8080-exec-9] c.h.p.m.S.selectByExample_COUNT          : <==      Total: 1
+2021-02-07 17:24:13.053 DEBUG 13036 --- [http-nio-8080-exec-8] c.h.p.mapper.UserMapper.selectByExample  : ==>  Preparing: select user_id, user_username, user_password, user_phone_number, user_caption_url, user_birthday, user_integral from t_user WHERE ( user_phone_number = ? )
+2021-02-07 17:24:13.053 DEBUG 13036 --- [http-nio-8080-exec-8] c.h.p.mapper.UserMapper.selectByExample  : ==> Parameters: 18792922021(String)
+2021-02-07 17:24:13.084 DEBUG 13036 --- [http-nio-8080-exec-8] c.h.p.mapper.UserMapper.selectByExample  : <==      Total: 1
+2021-02-07 17:24:13.086 DEBUG 13036 --- [http-nio-8080-exec-8] c.h.p.m.TypeMapper.selectByPrimaryKey    : ==>  Preparing: select type_id, type_flag, type_name from t_type where type_id = ?
+2021-02-07 17:24:13.087 DEBUG 13036 --- [http-nio-8080-exec-8] c.h.p.m.TypeMapper.selectByPrimaryKey    : ==> Parameters: 3(Integer)
+2021-02-07 17:24:13.119 DEBUG 13036 --- [http-nio-8080-exec-8] c.h.p.m.TypeMapper.selectByPrimaryKey    : <==      Total: 1
+2021-02-07 17:24:13.123 DEBUG 13036 --- [http-nio-8080-exec-8] c.h.p.m.PraiseMapper.selectByExample     : ==>  Preparing: select praise_id, praise_type_id, praise_user_id from t_praise WHERE ( praise_user_id = ? )
+2021-02-07 17:24:13.125 DEBUG 13036 --- [http-nio-8080-exec-8] c.h.p.m.PraiseMapper.selectByExample     : ==> Parameters: 2(Integer)
+2021-02-07 17:24:13.162 DEBUG 13036 --- [http-nio-8080-exec-8] c.h.p.m.PraiseMapper.selectByExample     : <==      Total: 1
+2021-02-07 17:24:13.174 DEBUG 13036 --- [http-nio-8080-exec-8] c.h.p.m.S.selectByExample_COUNT          : ==>  Preparing: SELECT count(0) FROM t_study WHERE (stu_type_id = ? AND stu_flag = ?)
+2021-02-07 17:24:13.177 DEBUG 13036 --- [http-nio-8080-exec-8] c.h.p.m.S.selectByExample_COUNT          : ==> Parameters: 3(Integer), 0(Integer)
+2021-02-07 17:24:13.215 DEBUG 13036 --- [http-nio-8080-exec-8] c.h.p.m.S.selectByExample_COUNT          : <==      Total: 1
+2021-02-07 17:24:13.223 DEBUG 13036 --- [http-nio-8080-exec-8] c.h.p.m.StudyMapper.selectByExample      : ==>  Preparing: select stu_id, stu_title, stu_introduce, stu_type_id, stu_browse_number, stu_praise_number, stu_photo_index_big_url, stu_photo_index_sm_url, stu_photo_url, stu_start_time, stu_end_time, stu_flag from t_study WHERE ( stu_type_id = ? and stu_flag = ? ) LIMIT ?
+2021-02-07 17:24:13.227 DEBUG 13036 --- [http-nio-8080-exec-8] c.h.p.m.StudyMapper.selectByExample      : ==> Parameters: 3(Integer), 0(Integer), 8(Integer)
+2021-02-07 17:24:13.298 DEBUG 13036 --- [http-nio-8080-exec-8] c.h.p.m.StudyMapper.selectByExample      : <==      Total: 8
+2021-02-07 17:24:44.115 DEBUG 13036 --- [http-nio-8080-exec-1] c.h.p.mapper.UserMapper.selectByExample  : ==>  Preparing: select user_id, user_username, user_password, user_phone_number, user_caption_url, user_birthday, user_integral from t_user WHERE ( user_phone_number = ? )
+2021-02-07 17:24:44.116 DEBUG 13036 --- [http-nio-8080-exec-1] c.h.p.mapper.UserMapper.selectByExample  : ==> Parameters: 18792922021(String)
+2021-02-07 17:24:44.148 DEBUG 13036 --- [http-nio-8080-exec-1] c.h.p.mapper.UserMapper.selectByExample  : <==      Total: 1
+2021-02-07 17:24:44.150 DEBUG 13036 --- [http-nio-8080-exec-1] c.h.p.m.TypeMapper.selectByPrimaryKey    : ==>  Preparing: select type_id, type_flag, type_name from t_type where type_id = ?
+2021-02-07 17:24:44.151 DEBUG 13036 --- [http-nio-8080-exec-1] c.h.p.m.TypeMapper.selectByPrimaryKey    : ==> Parameters: 3(Integer)
+2021-02-07 17:24:44.189 DEBUG 13036 --- [http-nio-8080-exec-1] c.h.p.m.TypeMapper.selectByPrimaryKey    : <==      Total: 1
+2021-02-07 17:24:44.194 DEBUG 13036 --- [http-nio-8080-exec-1] c.h.p.m.PraiseMapper.selectByExample     : ==>  Preparing: select praise_id, praise_type_id, praise_user_id from t_praise WHERE ( praise_user_id = ? )
+2021-02-07 17:24:44.194 DEBUG 13036 --- [http-nio-8080-exec-1] c.h.p.m.PraiseMapper.selectByExample     : ==> Parameters: 2(Integer)
+2021-02-07 17:24:44.227 DEBUG 13036 --- [http-nio-8080-exec-1] c.h.p.m.PraiseMapper.selectByExample     : <==      Total: 1
+2021-02-07 17:24:44.236 DEBUG 13036 --- [http-nio-8080-exec-1] c.h.p.m.S.selectByExample_COUNT          : ==>  Preparing: SELECT count(0) FROM t_study WHERE (stu_type_id = ? AND stu_flag = ?)
+2021-02-07 17:24:44.237 DEBUG 13036 --- [http-nio-8080-exec-1] c.h.p.m.S.selectByExample_COUNT          : ==> Parameters: 3(Integer), 0(Integer)
+2021-02-07 17:24:44.267 DEBUG 13036 --- [http-nio-8080-exec-1] c.h.p.m.S.selectByExample_COUNT          : <==      Total: 1
+2021-02-07 17:24:44.269 DEBUG 13036 --- [http-nio-8080-exec-1] c.h.p.m.StudyMapper.selectByExample      : ==>  Preparing: select stu_id, stu_title, stu_introduce, stu_type_id, stu_browse_number, stu_praise_number, stu_photo_index_big_url, stu_photo_index_sm_url, stu_photo_url, stu_start_time, stu_end_time, stu_flag from t_study WHERE ( stu_type_id = ? and stu_flag = ? ) LIMIT ?
+2021-02-07 17:24:44.270 DEBUG 13036 --- [http-nio-8080-exec-1] c.h.p.m.StudyMapper.selectByExample      : ==> Parameters: 3(Integer), 0(Integer), 8(Integer)
+2021-02-07 17:24:44.327 DEBUG 13036 --- [http-nio-8080-exec-1] c.h.p.m.StudyMapper.selectByExample      : <==      Total: 8
+2021-02-07 17:29:14.817  INFO 3520 --- [restartedMain] c.hoperun.pesystem.PesystemApplication   : Starting PesystemApplication using Java 1.8.0_251 on NOTE170076 with PID 3520 (E:\Ideaproject\Points_Exchange_System\target\classes started by Administrator in E:\Ideaproject\Points_Exchange_System)
+2021-02-07 17:29:14.832  INFO 3520 --- [restartedMain] c.hoperun.pesystem.PesystemApplication   : No active profile set, falling back to default profiles: default
+2021-02-07 17:29:15.066  INFO 3520 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-02-07 17:29:15.067  INFO 3520 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-02-07 17:29:17.378  INFO 3520 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-02-07 17:29:17.391  INFO 3520 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-02-07 17:29:17.392  INFO 3520 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-02-07 17:29:17.484  INFO 3520 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-02-07 17:29:17.485  INFO 3520 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2416 ms
+2021-02-07 17:29:18.912  INFO 3520 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-02-07 17:29:18.928  INFO 3520 --- [restartedMain] c.hoperun.pesystem.config.SwaggerConfig  : ======================== 当前环境是否开启Swagger：true ========================
+2021-02-07 17:29:19.054  INFO 3520 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-07 17:29:19.116  INFO 3520 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-02-07 17:29:19.314  INFO 3520 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2021-02-07 17:29:19.408  INFO 3520 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-02-07 17:29:19.411  INFO 3520 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-02-07 17:29:19.430  INFO 3520 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-02-07 17:29:19.475  INFO 3520 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-02-07 17:29:19.765  INFO 3520 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: showActivityListByPageUsingGET_1
+2021-02-07 17:29:19.808  INFO 3520 --- [restartedMain] c.hoperun.pesystem.PesystemApplication   : Started PesystemApplication in 5.934 seconds (JVM running for 8.542)
+2021-02-07 17:29:49.135  INFO 3520 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-02-07 17:29:49.136  INFO 3520 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-02-07 17:29:49.139  INFO 3520 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2021-02-07 17:30:02.603  INFO 3520 --- [http-nio-8080-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-02-07 17:30:03.675  INFO 3520 --- [http-nio-8080-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-02-07 17:30:03.710 DEBUG 3520 --- [http-nio-8080-exec-3] c.h.p.mapper.UserMapper.selectByExample  : ==>  Preparing: select user_id, user_username, user_password, user_phone_number, user_caption_url, user_birthday, user_integral from t_user WHERE ( user_phone_number = ? )
+2021-02-07 17:30:03.823 DEBUG 3520 --- [http-nio-8080-exec-3] c.h.p.mapper.UserMapper.selectByExample  : ==> Parameters: 18792922021(String)
+2021-02-07 17:30:03.938 DEBUG 3520 --- [http-nio-8080-exec-3] c.h.p.mapper.UserMapper.selectByExample  : <==      Total: 1
+2021-02-07 17:30:03.953 DEBUG 3520 --- [http-nio-8080-exec-3] c.h.p.m.TypeMapper.selectByPrimaryKey    : ==>  Preparing: select type_id, type_flag, type_name from t_type where type_id = ?
+2021-02-07 17:30:03.954 DEBUG 3520 --- [http-nio-8080-exec-3] c.h.p.m.TypeMapper.selectByPrimaryKey    : ==> Parameters: 3(Integer)
+2021-02-07 17:30:03.993 DEBUG 3520 --- [http-nio-8080-exec-3] c.h.p.m.TypeMapper.selectByPrimaryKey    : <==      Total: 1
+2021-02-07 17:30:04.004 DEBUG 3520 --- [http-nio-8080-exec-3] c.h.p.m.PraiseMapper.selectByExample     : ==>  Preparing: select praise_id, praise_type_id, praise_user_id from t_praise WHERE ( praise_user_id = ? )
+2021-02-07 17:30:04.006 DEBUG 3520 --- [http-nio-8080-exec-3] c.h.p.m.PraiseMapper.selectByExample     : ==> Parameters: 2(Integer)
+2021-02-07 17:30:04.056 DEBUG 3520 --- [http-nio-8080-exec-3] c.h.p.m.PraiseMapper.selectByExample     : <==      Total: 1
+2021-02-07 17:30:04.137 DEBUG 3520 --- [http-nio-8080-exec-3] c.h.p.m.S.selectByExample_COUNT          : ==>  Preparing: SELECT count(0) FROM t_study WHERE (stu_type_id = ? AND stu_flag = ?)
+2021-02-07 17:30:04.138 DEBUG 3520 --- [http-nio-8080-exec-3] c.h.p.m.S.selectByExample_COUNT          : ==> Parameters: 3(Integer), 0(Integer)
+2021-02-07 17:30:04.191 DEBUG 3520 --- [http-nio-8080-exec-3] c.h.p.m.S.selectByExample_COUNT          : <==      Total: 1
+2021-02-07 17:30:04.200 DEBUG 3520 --- [http-nio-8080-exec-3] c.h.p.m.StudyMapper.selectByExample      : ==>  Preparing: select stu_id, stu_title, stu_introduce, stu_type_id, stu_browse_number, stu_praise_number, stu_photo_index_big_url, stu_photo_index_sm_url, stu_photo_url, stu_start_time, stu_end_time, stu_flag from t_study WHERE ( stu_type_id = ? and stu_flag = ? ) LIMIT ?
+2021-02-07 17:30:04.202 DEBUG 3520 --- [http-nio-8080-exec-3] c.h.p.m.StudyMapper.selectByExample      : ==> Parameters: 3(Integer), 0(Integer), 8(Integer)
+2021-02-07 17:30:04.258 DEBUG 3520 --- [http-nio-8080-exec-3] c.h.p.m.StudyMapper.selectByExample      : <==      Total: 8
+2021-02-07 17:35:27.629 DEBUG 3520 --- [http-nio-8080-exec-9] c.h.p.mapper.UserMapper.selectByExample  : ==>  Preparing: select user_id, user_username, user_password, user_phone_number, user_caption_url, user_birthday, user_integral from t_user WHERE ( user_phone_number = ? )
+2021-02-07 17:35:27.631 DEBUG 3520 --- [http-nio-8080-exec-9] c.h.p.mapper.UserMapper.selectByExample  : ==> Parameters: 18792922021(String)
+2021-02-07 17:35:27.663 DEBUG 3520 --- [http-nio-8080-exec-9] c.h.p.mapper.UserMapper.selectByExample  : <==      Total: 1
+2021-02-07 17:35:27.665 DEBUG 3520 --- [http-nio-8080-exec-9] c.h.pesystem.mapper.PraiseMapper.insert  : ==>  Preparing: insert into t_praise (praise_id, praise_type_id, praise_user_id ) values (?, ?, ? )
+2021-02-07 17:35:27.666 DEBUG 3520 --- [http-nio-8080-exec-9] c.h.pesystem.mapper.PraiseMapper.insert  : ==> Parameters: null, 7(Integer), 2(Integer)
+2021-02-07 17:35:27.729 DEBUG 3520 --- [http-nio-8080-exec-9] c.h.pesystem.mapper.PraiseMapper.insert  : <==    Updates: 1
+2021-02-07 17:35:27.735 DEBUG 3520 --- [http-nio-8080-exec-9] c.h.p.m.StudyMapper.selectByPrimaryKey   : ==>  Preparing: select stu_id, stu_title, stu_introduce, stu_type_id, stu_browse_number, stu_praise_number, stu_photo_index_big_url, stu_photo_index_sm_url, stu_photo_url, stu_start_time, stu_end_time, stu_flag , stu_information from t_study where stu_id = ?
+2021-02-07 17:35:27.738 DEBUG 3520 --- [http-nio-8080-exec-9] c.h.p.m.StudyMapper.selectByPrimaryKey   : ==> Parameters: 7(Integer)
+2021-02-07 17:35:27.800 DEBUG 3520 --- [http-nio-8080-exec-9] c.h.p.m.StudyMapper.selectByPrimaryKey   : <==      Total: 1
+2021-02-07 17:35:27.817 DEBUG 3520 --- [http-nio-8080-exec-9] c.h.p.m.S.updateByPrimaryKeySelective    : ==>  Preparing: update t_study SET stu_praise_number = ? where stu_id = ?
+2021-02-07 17:35:27.819 DEBUG 3520 --- [http-nio-8080-exec-9] c.h.p.m.S.updateByPrimaryKeySelective    : ==> Parameters: 101(Integer), 7(Integer)
+2021-02-07 17:35:27.885 DEBUG 3520 --- [http-nio-8080-exec-9] c.h.p.m.S.updateByPrimaryKeySelective    : <==    Updates: 1
+2021-02-07 17:35:43.582 DEBUG 3520 --- [http-nio-8080-exec-10] c.h.p.mapper.UserMapper.selectByExample  : ==>  Preparing: select user_id, user_username, user_password, user_phone_number, user_caption_url, user_birthday, user_integral from t_user WHERE ( user_phone_number = ? )
+2021-02-07 17:35:43.584 DEBUG 3520 --- [http-nio-8080-exec-10] c.h.p.mapper.UserMapper.selectByExample  : ==> Parameters: 18792922021(String)
+2021-02-07 17:35:43.611 DEBUG 3520 --- [http-nio-8080-exec-10] c.h.p.mapper.UserMapper.selectByExample  : <==      Total: 1
+2021-02-07 17:35:43.613 DEBUG 3520 --- [http-nio-8080-exec-10] c.h.p.m.TypeMapper.selectByPrimaryKey    : ==>  Preparing: select type_id, type_flag, type_name from t_type where type_id = ?
+2021-02-07 17:35:43.614 DEBUG 3520 --- [http-nio-8080-exec-10] c.h.p.m.TypeMapper.selectByPrimaryKey    : ==> Parameters: 3(Integer)
+2021-02-07 17:35:43.646 DEBUG 3520 --- [http-nio-8080-exec-10] c.h.p.m.TypeMapper.selectByPrimaryKey    : <==      Total: 1
+2021-02-07 17:35:43.650 DEBUG 3520 --- [http-nio-8080-exec-10] c.h.p.m.PraiseMapper.selectByExample     : ==>  Preparing: select praise_id, praise_type_id, praise_user_id from t_praise WHERE ( praise_user_id = ? )
+2021-02-07 17:35:43.651 DEBUG 3520 --- [http-nio-8080-exec-10] c.h.p.m.PraiseMapper.selectByExample     : ==> Parameters: 2(Integer)
+2021-02-07 17:35:43.682 DEBUG 3520 --- [http-nio-8080-exec-10] c.h.p.m.PraiseMapper.selectByExample     : <==      Total: 2
+2021-02-07 17:35:43.689 DEBUG 3520 --- [http-nio-8080-exec-10] c.h.p.m.S.selectByExample_COUNT          : ==>  Preparing: SELECT count(0) FROM t_study WHERE (stu_type_id = ? AND stu_flag = ?)
+2021-02-07 17:35:43.691 DEBUG 3520 --- [http-nio-8080-exec-10] c.h.p.m.S.selectByExample_COUNT          : ==> Parameters: 3(Integer), 0(Integer)
+2021-02-07 17:35:43.721 DEBUG 3520 --- [http-nio-8080-exec-10] c.h.p.m.S.selectByExample_COUNT          : <==      Total: 1
+2021-02-07 17:35:43.724 DEBUG 3520 --- [http-nio-8080-exec-10] c.h.p.m.StudyMapper.selectByExample      : ==>  Preparing: select stu_id, stu_title, stu_introduce, stu_type_id, stu_browse_number, stu_praise_number, stu_photo_index_big_url, stu_photo_index_sm_url, stu_photo_url, stu_start_time, stu_end_time, stu_flag from t_study WHERE ( stu_type_id = ? and stu_flag = ? ) LIMIT ?
+2021-02-07 17:35:43.725 DEBUG 3520 --- [http-nio-8080-exec-10] c.h.p.m.StudyMapper.selectByExample      : ==> Parameters: 3(Integer), 0(Integer), 8(Integer)
+2021-02-07 17:35:43.767 DEBUG 3520 --- [http-nio-8080-exec-10] c.h.p.m.StudyMapper.selectByExample      : <==      Total: 8
+2021-02-07 18:41:49.840  WARN 3520 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m15s578ms656µs900ns).

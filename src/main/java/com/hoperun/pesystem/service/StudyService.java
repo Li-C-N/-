@@ -2,6 +2,7 @@ package com.hoperun.pesystem.service;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.hoperun.pesystem.dto.StudyDto;
 import com.hoperun.pesystem.mapper.BrowseMapper;
 import com.hoperun.pesystem.mapper.PraiseMapper;
 import com.hoperun.pesystem.mapper.StudyMapper;
@@ -29,14 +30,31 @@ public class StudyService {
      * @Date: 2021/2/7 9:16
      * @description:
      **/
-    public PageInfo<Study> queryStudyByPage(Integer pageNum, Integer pageSize, Integer type) {
+    public PageInfo<StudyDto> queryStudyByPage(Integer pageNum, Integer pageSize, Integer type,Integer studyId) {
+        StudyDto  StudyDto =new StudyDto();
+        List<StudyDto>  StudyDtoList =new ArrayList<StudyDto>();
         StudyExample studyExample=new StudyExample();
         StudyExample.Criteria  criteria = studyExample.createCriteria();
         criteria.andStuTypeIdEqualTo(type);
         criteria.andStuFlagEqualTo(0);
         PageHelper.startPage(pageNum,pageSize);
         List<Study> study = studyMapper.selectByExample(studyExample);
-        PageInfo<Study> pageInfo = new PageInfo<Study>(study);
+        HashSet<Integer> uerPraiseStudyId =this.queryUserPraiseStudy(studyId);
+        for(Study s:study) {
+            if (uerPraiseStudyId.contains(s.getStuId())){
+                StudyDto.setStudy(s);
+                StudyDto.setPraise(1);
+                StudyDtoList.add(StudyDto);
+
+            }
+            else{
+                StudyDto.setStudy(s);
+                StudyDto.setPraise(0);
+                StudyDtoList.add(StudyDto);
+            }
+
+        }
+        PageInfo<StudyDto> pageInfo = new PageInfo<StudyDto>(StudyDtoList);
         return pageInfo;
     }
     /**
@@ -53,7 +71,9 @@ public class StudyService {
         List<Praise> uerPraise = praiseMapper.selectByExample(praiseExample);
         for (Praise p: uerPraise)
         {
+
             uerPraiseStudyId.add(p.getPraiseTypeId());
+            System.out.println(p.getPraiseTypeId());
         }
 
         return uerPraiseStudyId;

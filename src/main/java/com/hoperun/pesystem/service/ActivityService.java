@@ -8,7 +8,6 @@ import com.hoperun.pesystem.model.Activity;
 import com.hoperun.pesystem.model.ActivityExample;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service

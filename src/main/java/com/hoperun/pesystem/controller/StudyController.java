@@ -44,31 +44,31 @@ public class StudyController {
     )
     @GetMapping("/allStudy")
     @ResponseBody
-    public ResultDto<List<StudyDto>> showActivityListByPage(@RequestParam(value = "studyTypeId",defaultValue = "1") Integer studyTypeId,
+    public ResultDto<PageInfo<StudyDto>> showActivityListByPage(@RequestParam(value = "studyTypeId",defaultValue = "1") Integer studyTypeId,
                                                                 @RequestParam(value = "pageNum" , defaultValue = "1") Integer pageNum,
                                                                 @RequestParam(value = "pageSize" ,defaultValue = "8") Integer pageSize,
                                                              HttpServletRequest request){
 //      学堂分页列表
         User userInfo = userService.getUserByToken( request.getHeader("token"));
-        StudyDto  StudyDto =new StudyDto();
-        List<StudyDto>  StudyDtoList =new ArrayList<StudyDto>();
+
         if(!studyService.studyTypeIdExist(studyTypeId)) {
             HashSet<Integer> uerPraiseStudyId =studyService.queryUserPraiseStudy(userInfo.getUserId());
-            PageInfo<Study> pageInfo = studyService.queryStudyByPage(pageNum, pageSize, studyTypeId);
-            for(Study study:pageInfo.getList()) {
-                if (uerPraiseStudyId.contains(study.getStuId())){
-                    StudyDto.setStudy(study);
-                    StudyDto.setPraise(1);
-                    StudyDtoList.add(StudyDto);
-                }
-                else{
-                    StudyDto.setStudy(study);
-                    StudyDto.setPraise(0);
-                    StudyDtoList.add(StudyDto);
-                }
-
-            }
-            return ResultDto.okWithData(CustomizeCode.STUDY_PAGEINFO_REQUEST_OK, StudyDtoList);
+            PageInfo<StudyDto> pageInfo = studyService.queryStudyByPage(pageNum, pageSize, studyTypeId,userInfo.getUserId());
+//            for(Study study:pageInfo.getList()) {
+//                if (uerPraiseStudyId.contains(study.getStuId())){
+//                    StudyDto.setStudy(study);
+//                    StudyDto.setPraise(1);
+//                    StudyDtoList.add(StudyDto);
+//
+//                }
+//                else{
+//                    StudyDto.setStudy(study);
+//                    StudyDto.setPraise(0);
+//                    StudyDtoList.add(StudyDto);
+//                }
+//
+//            }
+            return ResultDto.okWithData(CustomizeCode.STUDY_PAGEINFO_REQUEST_OK, pageInfo);
         }
         return ResultDto.errorOf(CustomizeCode.STUDY_TYPE_NOT_EXIST);
     }
