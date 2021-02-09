@@ -114,7 +114,7 @@ public class ResultDto<T> {
      **/
         public static <T> ResultDto<T> exceptionOf(Integer code, String message) {
             ResultDto<T> resultDto = new ResultDto<>();
-            resultDto.setStatus("请求异常(3000)");
+            resultDto.setStatus("请求异常(5000)");
             resultDto.setCode(code);
             resultDto.setMessage(message);
             return resultDto;

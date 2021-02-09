@@ -41,7 +41,8 @@ public enum CustomizeCode implements ICustomizeCode {
     ACTIVITY_TYPE_NOT_EXIST(40015, "不存在此活动类型！"),
     STUDY_TYPE_NOT_EXIST(40016, "不存在此学堂类型！"),
     INTEGRAL_NOT_ENOUGH(4017, "兑换失败，积分不足！"),
-
+//
+    TOKEN_VARIFY_FAIL(5001, "token varify fail！"),
 
 
     ;

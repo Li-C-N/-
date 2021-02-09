@@ -19,7 +19,7 @@ public class ActivityService {
     /**
      * @Author: ljd
      * @Date: 2021/2/5 9:37
-     * @description: 获取活动分页列表
+     * @description: 获取活动类型分页列表
      **/
     public PageInfo<Activity> queryActivityByPage(Integer pageNum, Integer pageSize,Integer type) {
         ActivityExample activityExample=new ActivityExample();

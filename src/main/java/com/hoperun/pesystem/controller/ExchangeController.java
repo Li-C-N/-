@@ -32,8 +32,8 @@ public class ExchangeController {
     )
     @PostMapping("/allGoods/exchange")
     @ResponseBody
-    public ResultDto<?> showGoodsListBy(@RequestParam(value = "goodsId") Integer goodsId,
-                                        @RequestParam(value = "goodsNum") Integer goodsNum,
+    public ResultDto<?> showGoodsListBy( Integer goodsId,
+                                         Integer goodsNum,
                                         HttpServletRequest request) {
 
         User user = userService.getUserByToken(request.getHeader("token"));

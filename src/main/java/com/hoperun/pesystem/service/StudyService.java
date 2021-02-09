@@ -52,18 +52,7 @@ public class StudyService {
                 StudyDto.setPraise(0);
                 StudyDtoList.add(StudyDto);
             }
-            System.out.println(StudyDto.getStudy().getStuId());
-            System.out.println(StudyDtoList.get(0).getStudy().getStuTitle());
         }
-//        System.out.println(StudyDtoList.get(0).getStudy().getStuTitle());
-//        System.out.println(StudyDtoList.get(1).getStudy().getStuTitle());
-//        System.out.println(StudyDtoList.get(2).getStudy().getStuTitle());
-//        System.out.println(StudyDtoList.get(3).getStudy().getStuTitle());
-//        System.out.println(StudyDtoList.get(4).getStudy().getStuTitle());
-//        System.out.println(StudyDtoList.get(5).getStudy().getStuTitle());
-//        System.out.println(StudyDtoList.get(6).getStudy().getStuTitle());
-//        System.out.println(StudyDtoList.get(7).getStudy().getStuTitle());
-
         PageInfo<StudyDto> pageInfo = new PageInfo<StudyDto>(StudyDtoList);
         return pageInfo;
     }

@@ -52,22 +52,7 @@ public class StudyController {
         User userInfo = userService.getUserByToken( request.getHeader("token"));
 
         if(!studyService.studyTypeIdExist(studyTypeId)) {
-            HashSet<Integer> uerPraiseStudyId =studyService.queryUserPraiseStudy(userInfo.getUserId());
             PageInfo<StudyDto> pageInfo = studyService.queryStudyByPage(pageNum, pageSize, studyTypeId,userInfo.getUserId());
-//            for(Study study:pageInfo.getList()) {
-//                if (uerPraiseStudyId.contains(study.getStuId())){
-//                    StudyDto.setStudy(study);
-//                    StudyDto.setPraise(1);
-//                    StudyDtoList.add(StudyDto);
-//
-//                }
-//                else{
-//                    StudyDto.setStudy(study);
-//                    StudyDto.setPraise(0);
-//                    StudyDtoList.add(StudyDto);
-//                }
-//
-//            }
             return ResultDto.okWithData(CustomizeCode.STUDY_PAGEINFO_REQUEST_OK, pageInfo);
         }
         return ResultDto.errorOf(CustomizeCode.STUDY_TYPE_NOT_EXIST);

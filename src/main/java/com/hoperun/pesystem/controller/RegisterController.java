@@ -35,17 +35,17 @@ public class RegisterController {
 
     @PostMapping("/register")
     @ResponseBody
-    public ResultDto<?> register(@RequestParam("phonenumber") String phonenumber,
-                              @RequestParam("userName") String userName,
-                              @RequestParam("password") String password
+    public ResultDto<?> register(String phonenumber,
+                               String username,
+                               String password
                           ) {
-        if(!StringUtils.isNotBlank(userName)) return ResultDto.errorOf(CustomizeCode.USERNAME_EMPTY);
+        if(!StringUtils.isNotBlank(username)) return ResultDto.errorOf(CustomizeCode.USERNAME_EMPTY);
         if(!StringUtils.isNotBlank(phonenumber)) return ResultDto.errorOf(CustomizeCode.PHONENUMBER_EMPTY);
         if(!StringUtils.isNotBlank(password)) return ResultDto.errorOf(CustomizeCode.PASSWORD_EMPTY);
-        if(!registerService.checkUserName(userName)) return ResultDto.errorOf(CustomizeCode.USERNAME_ERROR);
+        if(!registerService.checkUserName(username)) return ResultDto.errorOf(CustomizeCode.USERNAME_ERROR);
         if(!registerService.checkPhonenumber(phonenumber))  return ResultDto.errorOf(CustomizeCode.PHONENUMBER_ERROR);
         if(!registerService.checkPassword(password)) return ResultDto.errorOf(CustomizeCode.PASSWORD_ERROR);
-        if(registerService.register(userName,password,phonenumber)){
+        if(registerService.register(username,password,phonenumber)){
            return  ResultDto.okOf(CustomizeCode.REGISTER_SUCCESS);
         }
         return ResultDto.errorOf(CustomizeCode.REGISTER_FAILED);
