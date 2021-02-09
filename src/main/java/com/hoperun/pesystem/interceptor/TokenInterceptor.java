@@ -3,7 +3,6 @@ import com.alibaba.fastjson.JSONObject;
 import  com.hoperun.pesystem.utils.TokenUtils;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 @Component

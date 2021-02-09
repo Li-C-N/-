@@ -11,6 +11,11 @@ import java.util.List;
 public class TypeService {
     @Autowired
     private TypeMapper typeMapper;
+    /**
+     * @Author: ljd
+     * @Date: 2021/2/9 13:47
+     * @description: 商品页加载商品类型
+     **/
     public List<Type> allGoodsType()
     {
         TypeExample typeExample =new TypeExample();
@@ -18,6 +23,11 @@ public class TypeService {
         criteria.andTypeFlagEqualTo(1);
         return  typeMapper.selectByExample(typeExample);
     }
+    /**
+     * @Author: ljd
+     * @Date: 2021/2/9 13:47
+     * @description: 活动页加载活动类型
+     **/
     public List<Type> allActivityType()
     {
         TypeExample typeExample =new TypeExample();
@@ -25,6 +35,11 @@ public class TypeService {
         criteria.andTypeFlagEqualTo(2);
         return  typeMapper.selectByExample(typeExample);
     }
+    /**
+     * @Author: ljd
+     * @Date: 2021/2/9 13:47
+     * @description: 学堂页加载学堂类型
+     **/
     public List<Type> allStudyType()
     {
         TypeExample typeExample =new TypeExample();

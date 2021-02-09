@@ -17,7 +17,11 @@ public class IndexService {
     private GoodsMapper goodsMapper;
     @Autowired
     private StudyMapper studyMapper;
-
+/**
+ * @Author: ljd
+ * @Date: 2021/2/9 13:45
+ * @description: 主页最新活动
+ **/
     public List<Activity> showHotInfoWithActivity(){
         ActivityExample  activityExample=new ActivityExample();
         ActivityExample.Criteria  criteria = activityExample.createCriteria();
@@ -27,6 +31,11 @@ public class IndexService {
         activityExample.setEndNum(3);
         return activityMapper.selectByExample(activityExample);
     }
+    /**
+     * @Author: ljd
+     * @Date: 2021/2/9 13:46
+     * @description: 主页热门商品
+     **/
     public List<Goods> showHotInfoWithGoods(){
         GoodsExample goodsExample=new GoodsExample();
         GoodsExample.Criteria  criteria = goodsExample.createCriteria();
@@ -36,6 +45,11 @@ public class IndexService {
         goodsExample.setEndNum(3);
         return goodsMapper.selectByExample(goodsExample);
     }
+    /**
+     * @Author: ljd
+     * @Date: 2021/2/9 13:46
+     * @description: 主页热门学堂
+     **/
     public List<Study> showHotInfoWithStudy(){
         StudyExample  studyExample=new StudyExample();
         StudyExample.Criteria  criteria = studyExample.createCriteria();

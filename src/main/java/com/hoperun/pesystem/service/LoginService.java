@@ -15,7 +15,11 @@ public class LoginService {
     @Autowired
     private UserMapper userMapper;
 
-
+/**
+ * @Author: ljd
+ * @Date: 2021/2/9 13:46
+ * @description: 登录check
+ **/
     public boolean checkLogin(String phonenumber, String password) {
         UserExample example = new UserExample();
         example.createCriteria().andUserPhoneNumberEqualTo(phonenumber);

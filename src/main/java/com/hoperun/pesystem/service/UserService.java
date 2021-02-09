@@ -17,18 +17,33 @@ public class UserService {
     private  UserMapper userMapper;
     @Autowired
     private ExchangeMapper exchangeMapper;
+    /**
+     * @Author: ljd
+     * @Date: 2021/2/9 13:48
+     * @description: 通过phonenumber获取用户信息
+     **/
     public List<User> userInfoByPhoneNumber(String PhoneNumber){
         UserExample userExample =new UserExample();
         UserExample.Criteria criteria =userExample.createCriteria();
         criteria.andUserPhoneNumberEqualTo(PhoneNumber);
         return  userMapper.selectByExample(userExample);
     }
+    /**
+     * @Author: ljd
+     * @Date: 2021/2/9 13:48
+     * @description: 用户兑换商品
+     **/
     public List<Exchange> userExchangedByUserId(Integer UserId){
         ExchangeExample exchangeExample =new ExchangeExample();
         ExchangeExample.Criteria criteria =exchangeExample.createCriteria();
         criteria.andExUserIdEqualTo(UserId);
         return  exchangeMapper.selectByExample(exchangeExample);
     }
+    /**
+     * @Author: ljd
+     * @Date: 2021/2/9 13:49
+     * @description: 更新用户积分
+     **/
     public boolean userIntegralChangedByExchangeGoods(int goodsIntegral,int goodsNum,int userId,int userIntegral){
         if(userIntegral>=goodsIntegral*goodsNum) {
             userIntegral = userIntegral - goodsIntegral * goodsNum;
