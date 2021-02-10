@@ -27,7 +27,7 @@ public class RegisterController {
     @ApiImplicitParams(
             value = {
                     @ApiImplicitParam(name = "phonenumber", value = "手机号码", required = true, dataType = "String"),
-                    @ApiImplicitParam(name = "userName", value = "用户名", required = true, dataType = "String" ),
+                    @ApiImplicitParam(name = "username", value = "用户名", required = true, dataType = "String" ),
                     @ApiImplicitParam(name = "password", value = "密码", required = true, dataType = "String")
             }
     )
