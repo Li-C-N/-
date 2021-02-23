@@ -21,6 +21,22 @@ public class Study  implements Serializable {
      * @mbg.generated Sun Feb 07 11:32:39 CST 2021
      */
     private String stuTitle;
+    private Integer praise;
+
+    public Integer getPraise() {
+        return praise;
+    }
+
+    public void setPraise(Integer praise) {
+        this.praise = praise;
+    }
+
+    @Override
+    public String toString() {
+        return "Study{" +
+                "praise=" + praise +
+                '}';
+    }
 
     /**
      *

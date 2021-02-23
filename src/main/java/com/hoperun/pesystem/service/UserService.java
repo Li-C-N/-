@@ -1,5 +1,7 @@
 package com.hoperun.pesystem.service;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.hoperun.pesystem.mapper.ExchangeMapper;
 import com.hoperun.pesystem.mapper.UserMapper;
 import com.hoperun.pesystem.model.*;
@@ -33,12 +35,15 @@ public class UserService {
      * @Date: 2021/2/9 13:48
      * @description: 用户兑换商品
      **/
-    public List<Exchange> userExchangedByUserId(Integer UserId){
+    public PageInfo<Exchange> userExchangedByUserId(Integer UserId,Integer pageNum, Integer pageSize){
         ExchangeExample exchangeExample =new ExchangeExample();
         ExchangeExample.Criteria criteria =exchangeExample.createCriteria();
         criteria.andExUserIdEqualTo(UserId);
-        return  exchangeMapper.selectByExample(exchangeExample);
+        PageHelper.startPage(pageNum,pageSize);
+        List<Exchange> exchange= exchangeMapper.selectByExample(exchangeExample);
+        return new PageInfo<Exchange>(exchange);
     }
+
     /**
      * @Author: ljd
      * @Date: 2021/2/9 13:49

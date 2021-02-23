@@ -44,7 +44,7 @@ public class StudyController {
     )
     @GetMapping("/allStudy")
     @ResponseBody
-    public ResultDto<PageInfo<StudyDto>> showActivityListByPage(@RequestParam(value = "studyTypeId",defaultValue = "1") Integer studyTypeId,
+    public ResultDto<PageInfo<Study>> showActivityListByPage(@RequestParam(value = "studyTypeId",defaultValue = "1") Integer studyTypeId,
                                                                 @RequestParam(value = "pageNum" , defaultValue = "1") Integer pageNum,
                                                                 @RequestParam(value = "pageSize" ,defaultValue = "8") Integer pageSize,
                                                              HttpServletRequest request){
@@ -52,7 +52,7 @@ public class StudyController {
         User userInfo = userService.getUserByToken( request.getHeader("token"));
 
         if(!studyService.studyTypeIdExist(studyTypeId)) {
-            PageInfo<StudyDto> pageInfo = studyService.queryStudyByPage(pageNum, pageSize, studyTypeId,userInfo.getUserId());
+            PageInfo<Study> pageInfo = studyService.queryStudyByPage(pageNum, pageSize, studyTypeId,userInfo.getUserId());
             return ResultDto.okWithData(CustomizeCode.STUDY_PAGEINFO_REQUEST_OK, pageInfo);
         }
         return ResultDto.errorOf(CustomizeCode.STUDY_TYPE_NOT_EXIST);

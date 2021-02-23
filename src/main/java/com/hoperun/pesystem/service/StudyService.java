@@ -30,7 +30,7 @@ public class StudyService {
      * @Date: 2021/2/7 9:16
      * @description:
      **/
-    public PageInfo<StudyDto> queryStudyByPage(Integer pageNum, Integer pageSize, Integer type,Integer studyId) {
+    public PageInfo<Study> queryStudyByPage(Integer pageNum, Integer pageSize, Integer type,Integer studyId) {
         List<StudyDto>  StudyDtoList =new ArrayList<>();
         StudyExample studyExample=new StudyExample();
         StudyExample.Criteria  criteria = studyExample.createCriteria();
@@ -38,22 +38,18 @@ public class StudyService {
         criteria.andStuFlagEqualTo(0);
         PageHelper.startPage(pageNum,pageSize);
         List<Study> study = studyMapper.selectByExample(studyExample);
+        PageInfo<Study> pageInfo = new PageInfo<Study>(study);
         HashSet<Integer> uerPraiseStudyId =this.queryUserPraiseStudy(studyId);
-        for(Study s:study) {
-            StudyDto  StudyDto =new StudyDto();
+        for(Study s:pageInfo.getList()) {
             if (uerPraiseStudyId.contains(s.getStuId())){
-                StudyDto.setStudy(s);
-                StudyDto.setPraise(1);
-                StudyDtoList.add(StudyDto);
 
+                s.setPraise(1);
             }
             else{
-                StudyDto.setStudy(s);
-                StudyDto.setPraise(0);
-                StudyDtoList.add(StudyDto);
+
+                s.setPraise(0);
             }
         }
-        PageInfo<StudyDto> pageInfo = new PageInfo<StudyDto>(StudyDtoList);
         return pageInfo;
     }
     /**

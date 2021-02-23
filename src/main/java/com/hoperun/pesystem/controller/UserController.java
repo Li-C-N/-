@@ -1,5 +1,6 @@
 package com.hoperun.pesystem.controller;
 
+import com.github.pagehelper.PageInfo;
 import com.hoperun.pesystem.dto.ResultDto;
 import com.hoperun.pesystem.enums.CustomizeCode;
 import com.hoperun.pesystem.model.Exchange;
@@ -9,6 +10,7 @@ import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
@@ -28,13 +30,15 @@ public class UserController {
     )
          @PostMapping("/personInfo")
          @ResponseBody
-       public ResultDto<?> persosnInfo( HttpServletRequest request)
+       public ResultDto<?> persosnInfo(@RequestParam(value = "pageNum" , defaultValue = "1") Integer pageNum,
+                                       @RequestParam(value = "pageSize" ,defaultValue = "8") Integer pageSize,
+                                                                                        HttpServletRequest request)
         {
             User userInfo = userService.getUserByToken( request.getHeader("token"));
-            List<Exchange> exchanges = userService.userExchangedByUserId(userInfo.getUserId());
+            PageInfo<Exchange> pageInfo = userService.userExchangedByUserId(userInfo.getUserId(), pageNum, pageSize);
             Map<String,Object> map = new HashMap<>();
             map.put("用户信息",userInfo);
-            map.put("商品兑换记录",exchanges);
+            map.put("商品兑换记录",pageInfo);
             return ResultDto.okWithData(CustomizeCode.USERINFO_AND_EXCHANGE_RECORD_REQUEST_OK,map);
         }
     }
