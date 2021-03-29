@@ -28,6 +28,7 @@ public class StudyController {
     private StudyService studyService;
     @Autowired
     private UserService userService;
+
     /**
      * @Author: ljd
      * @Date: 2021/2/7 8:59
@@ -38,21 +39,21 @@ public class StudyController {
     @ApiImplicitParams(
             value = {
                     @ApiImplicitParam(name = "studyTypeId", value = "学堂类型id", required = true, dataType = "String"),
-                    @ApiImplicitParam(name = "pageNum", value = "页码", required = true, dataType = "String" ,defaultValue = "1"),
+                    @ApiImplicitParam(name = "pageNum", value = "页码", required = true, dataType = "String", defaultValue = "1"),
                     @ApiImplicitParam(name = "pageSize", value = "页长", required = true, dataType = "String", defaultValue = "8")
             }
     )
     @GetMapping("/allStudy")
     @ResponseBody
-    public ResultDto<PageInfo<Study>> showActivityListByPage(@RequestParam(value = "studyTypeId",defaultValue = "1") Integer studyTypeId,
-                                                                @RequestParam(value = "pageNum" , defaultValue = "1") Integer pageNum,
-                                                                @RequestParam(value = "pageSize" ,defaultValue = "8") Integer pageSize,
-                                                             HttpServletRequest request){
+    public ResultDto<PageInfo<Study>> showActivityListByPage(@RequestParam(value = "studyTypeId", defaultValue = "1") Integer studyTypeId,
+                                                             @RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum,
+                                                             @RequestParam(value = "pageSize", defaultValue = "8") Integer pageSize,
+                                                             HttpServletRequest request) {
 //      学堂分页列表
-        User userInfo = userService.getUserByToken( request.getHeader("token"));
+        User userInfo = userService.getUserByToken(request.getHeader("token"));
 
-        if(!studyService.studyTypeIdExist(studyTypeId)) {
-            PageInfo<Study> pageInfo = studyService.queryStudyByPage(pageNum, pageSize, studyTypeId,userInfo.getUserId());
+        if (!studyService.studyTypeIdExist(studyTypeId)) {
+            PageInfo<Study> pageInfo = studyService.queryStudyByPage(pageNum, pageSize, studyTypeId, userInfo.getUserId());
             return ResultDto.okWithData(CustomizeCode.STUDY_PAGEINFO_REQUEST_OK, pageInfo);
         }
         return ResultDto.errorOf(CustomizeCode.STUDY_TYPE_NOT_EXIST);
@@ -72,14 +73,14 @@ public class StudyController {
     )
     @GetMapping("/allStudy/studyDetailsId={studyId}")
     @ResponseBody
-    public  ResultDto<Study> showStudyDeatilsById(@PathVariable("studyId") Integer studyId,
-                                                  HttpServletRequest request){
-        User user = userService.getUserByToken( request.getHeader("token"));
-        if(studyId==null) {
-            studyId=1;
+    public ResultDto<Study> showStudyDeatilsById(@PathVariable("studyId") Integer studyId,
+                                                 HttpServletRequest request) {
+        User user = userService.getUserByToken(request.getHeader("token"));
+        if (studyId == null) {
+            studyId = 1;
 
         }
-        if(!studyService.studyExist(studyId)) {
+        if (!studyService.studyExist(studyId)) {
 //      返回学堂详情信息且增加学堂浏览记录
             if (studyService.userBrowseRecord(studyId, user.getUserId())) {
 //          学堂浏览数+1
@@ -92,6 +93,7 @@ public class StudyController {
         }
         return ResultDto.errorOf(CustomizeCode.STUDY_NOT_EXIST);
     }
+
     /**
      * @Author: ljd
      * @Date: 2021/2/7 9:00
@@ -107,23 +109,22 @@ public class StudyController {
     )
     @PostMapping("/praiseStudy")
     @ResponseBody
-    public ResultDto<?> praise (@RequestParam("flag") Integer flag,
-                                              @RequestParam("studyId") Integer studyId,
-                                              HttpServletRequest request){
-        User user = userService.getUserByToken( request.getHeader("token"));
+    public ResultDto<?> praise(@RequestParam("flag") Integer flag,
+                               @RequestParam("studyId") Integer studyId,
+                               HttpServletRequest request) {
+        User user = userService.getUserByToken(request.getHeader("token"));
 
-        if(flag==1){
+        if (flag == 1) {
             if (studyService.praise(studyId, user.getUserId())) {
                 if (studyService.addStudyPraiseRecordCount(studyId)) {
                     return ResultDto.okOf(CustomizeCode.STUDY_PRAISE_OK);
                 }
             }
             return ResultDto.okOf(CustomizeCode.STUDY_PRAISE_FAILED);
-        }
-       else {
-            if (studyService.praiseCancel(studyId, user.getUserId())){
-                if(studyService.subStudyPraiseRecordCount(studyId)){
-                return   ResultDto.okOf(CustomizeCode.STUDY_PRAISE_CANCEL_OK);
+        } else {
+            if (studyService.praiseCancel(studyId, user.getUserId())) {
+                if (studyService.subStudyPraiseRecordCount(studyId)) {
+                    return ResultDto.okOf(CustomizeCode.STUDY_PRAISE_CANCEL_OK);
                 }
             }
             return ResultDto.okOf(CustomizeCode.STUDY_PRAISE_CANCEL_FAILED);

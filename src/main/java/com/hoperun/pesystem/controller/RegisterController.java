@@ -27,7 +27,7 @@ public class RegisterController {
     @ApiImplicitParams(
             value = {
                     @ApiImplicitParam(name = "phonenumber", value = "手机号码", required = true, dataType = "String"),
-                    @ApiImplicitParam(name = "username", value = "用户名", required = true, dataType = "String" ),
+                    @ApiImplicitParam(name = "username", value = "用户名", required = true, dataType = "String"),
                     @ApiImplicitParam(name = "password", value = "密码", required = true, dataType = "String")
             }
     )
@@ -36,17 +36,29 @@ public class RegisterController {
     @PostMapping("/register")
     @ResponseBody
     public ResultDto<?> register(String phonenumber,
-                               String username,
-                               String password
-                          ) {
-        if(!StringUtils.isNotBlank(username)) return ResultDto.errorOf(CustomizeCode.USERNAME_EMPTY);
-        if(!StringUtils.isNotBlank(phonenumber)) return ResultDto.errorOf(CustomizeCode.PHONENUMBER_EMPTY);
-        if(!StringUtils.isNotBlank(password)) return ResultDto.errorOf(CustomizeCode.PASSWORD_EMPTY);
-        if(!registerService.checkUserName(username)) return ResultDto.errorOf(CustomizeCode.USERNAME_ERROR);
-        if(!registerService.checkPhonenumber(phonenumber))  return ResultDto.errorOf(CustomizeCode.PHONENUMBER_ERROR);
-        if(!registerService.checkPassword(password)) return ResultDto.errorOf(CustomizeCode.PASSWORD_ERROR);
-        if(registerService.register(username,password,phonenumber)){
-           return  ResultDto.okOf(CustomizeCode.REGISTER_SUCCESS);
+                                 String username,
+                                 String password
+    ) {
+        if (!StringUtils.isNotBlank(username)) {
+            return ResultDto.errorOf(CustomizeCode.USERNAME_EMPTY);
+        }
+        if (!StringUtils.isNotBlank(phonenumber)) {
+            return ResultDto.errorOf(CustomizeCode.PHONENUMBER_EMPTY);
+        }
+        if (!StringUtils.isNotBlank(password)) {
+            return ResultDto.errorOf(CustomizeCode.PASSWORD_EMPTY);
+        }
+        if (!registerService.checkUserName(username)) {
+            return ResultDto.errorOf(CustomizeCode.USERNAME_ERROR);
+        }
+        if (!registerService.checkPhonenumber(phonenumber)) {
+            return ResultDto.errorOf(CustomizeCode.PHONENUMBER_ERROR);
+        }
+        if (!registerService.checkPassword(password)) {
+            return ResultDto.errorOf(CustomizeCode.PASSWORD_ERROR);
+        }
+        if (registerService.register(username, password, phonenumber)) {
+            return ResultDto.okOf(CustomizeCode.REGISTER_SUCCESS);
         }
         return ResultDto.errorOf(CustomizeCode.REGISTER_FAILED);
     }

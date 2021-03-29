@@ -16,31 +16,33 @@ import java.util.UUID;
 public class UserService {
 
     @Autowired
-    private  UserMapper userMapper;
+    private UserMapper userMapper;
     @Autowired
     private ExchangeMapper exchangeMapper;
+
     /**
      * @Author: ljd
      * @Date: 2021/2/9 13:48
      * @description: 通过phonenumber获取用户信息
      **/
-    public List<User> userInfoByPhoneNumber(String PhoneNumber){
-        UserExample userExample =new UserExample();
-        UserExample.Criteria criteria =userExample.createCriteria();
+    public List<User> userInfoByPhoneNumber(String PhoneNumber) {
+        UserExample userExample = new UserExample();
+        UserExample.Criteria criteria = userExample.createCriteria();
         criteria.andUserPhoneNumberEqualTo(PhoneNumber);
-        return  userMapper.selectByExample(userExample);
+        return userMapper.selectByExample(userExample);
     }
+
     /**
      * @Author: ljd
      * @Date: 2021/2/9 13:48
      * @description: 用户兑换商品
      **/
-    public PageInfo<Exchange> userExchangedByUserId(Integer UserId,Integer pageNum, Integer pageSize){
-        ExchangeExample exchangeExample =new ExchangeExample();
-        ExchangeExample.Criteria criteria =exchangeExample.createCriteria();
+    public PageInfo<Exchange> userExchangedByUserId(Integer UserId, Integer pageNum, Integer pageSize) {
+        ExchangeExample exchangeExample = new ExchangeExample();
+        ExchangeExample.Criteria criteria = exchangeExample.createCriteria();
         criteria.andExUserIdEqualTo(UserId);
-        PageHelper.startPage(pageNum,pageSize);
-        List<Exchange> exchange= exchangeMapper.selectByExample(exchangeExample);
+        PageHelper.startPage(pageNum, pageSize);
+        List<Exchange> exchange = exchangeMapper.selectByExample(exchangeExample);
         return new PageInfo<Exchange>(exchange);
     }
 
@@ -49,8 +51,8 @@ public class UserService {
      * @Date: 2021/2/9 13:49
      * @description: 更新用户积分
      **/
-    public boolean userIntegralChangedByExchangeGoods(int goodsIntegral,int goodsNum,int userId,int userIntegral){
-        if(userIntegral>=goodsIntegral*goodsNum) {
+    public boolean userIntegralChangedByExchangeGoods(int goodsIntegral, int goodsNum, int userId, int userIntegral) {
+        if (userIntegral >= goodsIntegral * goodsNum) {
             userIntegral = userIntegral - goodsIntegral * goodsNum;
             User user = new User();
             user.setUserId(userId);
@@ -59,14 +61,15 @@ public class UserService {
         }
         return false;
     }
+
     /**
      * @Author: ljd
      * @Date: 2021/2/5 11:43
      * @description: 通过token得到user对象
      **/
-    public  User getUserByToken(String token) {
+    public User getUserByToken(String token) {
         String PhoneNumber = TokenUtils.getUserphonenumber(token);
-        return  this.userInfoByPhoneNumber(PhoneNumber).get(0);
+        return this.userInfoByPhoneNumber(PhoneNumber).get(0);
     }
 }
 

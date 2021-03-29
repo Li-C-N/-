@@ -10,21 +10,22 @@ import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
+
 @Service
 public class LoginService {
     @Autowired
     private UserMapper userMapper;
 
-/**
- * @Author: ljd
- * @Date: 2021/2/9 13:46
- * @description: 登录check
- **/
+    /**
+     * @Author: ljd
+     * @Date: 2021/2/9 13:46
+     * @description: 登录check
+     **/
     public boolean checkLogin(String phonenumber, String password) {
         UserExample example = new UserExample();
         example.createCriteria().andUserPhoneNumberEqualTo(phonenumber);
         List<User> users = userMapper.selectByExample(example);
-        if(users.size() == 1){
+        if (users.size() == 1) {
             User user = users.get(0);
             password = CodecUtils.md5Hex(password);
             return StringUtils.equals(user.getUserPassword(), password);

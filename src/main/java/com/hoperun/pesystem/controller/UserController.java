@@ -18,28 +18,29 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 @Api(tags = "个人信息Controller")
 @Controller
 public class UserController {
     @Autowired
-    private UserService  userService;
+    private UserService userService;
+
     @ApiOperation("个人信息中心")
     //@ApiImplicitParams：多个请求参数
     @ApiImplicitParams(
             value = {}
     )
-         @PostMapping("/personInfo")
-         @ResponseBody
-       public ResultDto<?> persosnInfo(@RequestParam(value = "pageNum" , defaultValue = "1") Integer pageNum,
-                                       @RequestParam(value = "pageSize" ,defaultValue = "8") Integer pageSize,
-                                                                                        HttpServletRequest request)
-        {
-            User userInfo = userService.getUserByToken( request.getHeader("token"));
-            PageInfo<Exchange> pageInfo = userService.userExchangedByUserId(userInfo.getUserId(), pageNum, pageSize);
-            Map<String,Object> map = new HashMap<>();
-            map.put("用户信息",userInfo);
-            map.put("商品兑换记录",pageInfo);
-            return ResultDto.okWithData(CustomizeCode.USERINFO_AND_EXCHANGE_RECORD_REQUEST_OK,map);
-        }
+    @PostMapping("/personInfo")
+    @ResponseBody
+    public ResultDto<?> persosnInfo(@RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum,
+                                    @RequestParam(value = "pageSize", defaultValue = "8") Integer pageSize,
+                                    HttpServletRequest request) {
+        User userInfo = userService.getUserByToken(request.getHeader("token"));
+        PageInfo<Exchange> pageInfo = userService.userExchangedByUserId(userInfo.getUserId(), pageNum, pageSize);
+        Map<String, Object> map = new HashMap<>();
+        map.put("用户信息", userInfo);
+        map.put("商品兑换记录", pageInfo);
+        return ResultDto.okWithData(CustomizeCode.USERINFO_AND_EXCHANGE_RECORD_REQUEST_OK, map);
     }
+}
 

@@ -1,4 +1,5 @@
 package com.hoperun.pesystem.controller;
+
 import com.hoperun.pesystem.dto.ResultDto;
 import com.hoperun.pesystem.enums.CustomizeCode;
 import com.hoperun.pesystem.model.User;
@@ -14,6 +15,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+
 @Api(tags = "登录Controller")
 @RestController
 public class LoginController {
@@ -21,6 +23,7 @@ public class LoginController {
     private LoginService loginService;
     @Autowired
     private RegisterService registerService;
+
     @ApiOperation("用户登录")
     //@ApiImplicitParams：多个请求参数
     @ApiImplicitParams(
@@ -29,21 +32,29 @@ public class LoginController {
                     @ApiImplicitParam(name = "password", value = "密码", required = true, dataType = "String")
             }
     )
-        @PostMapping("/login")
-        @ResponseBody
-        public ResultDto<?> login(  String phonenumber,
-                                    String password
-                                   ){
+    @PostMapping("/login")
+    @ResponseBody
+    public ResultDto<?> login(String phonenumber,
+                              String password
+    ) {
         System.out.println(phonenumber);
         System.out.println(password);
-            if(!StringUtils.isNotBlank(phonenumber)) return ResultDto.errorOf(CustomizeCode.PHONENUMBER_EMPTY);
-            if(!StringUtils.isNotBlank(password)) return ResultDto.errorOf(CustomizeCode.PASSWORD_EMPTY);
-            if(!registerService.checkPhonenumber(phonenumber))  return ResultDto.errorOf(CustomizeCode.PHONENUMBER_ERROR);
-            if(!registerService.registered(phonenumber)) return ResultDto.errorOf(CustomizeCode.PHONENUMBER_REGISTER_ERROR);
-                if (loginService.checkLogin(phonenumber,password)){
-                    String token= TokenUtils.sign(phonenumber);
-                    return  ResultDto.okWithData(CustomizeCode.LOGIN_SUCCESS,token);
-                }
-                return  ResultDto.errorOf(CustomizeCode.LOGIN_FAILED);
+        if (!StringUtils.isNotBlank(phonenumber)) {
+            return ResultDto.errorOf(CustomizeCode.PHONENUMBER_EMPTY);
         }
+        if (!StringUtils.isNotBlank(password)) {
+            return ResultDto.errorOf(CustomizeCode.PASSWORD_EMPTY);
+        }
+        if (!registerService.checkPhonenumber(phonenumber)) {
+            return ResultDto.errorOf(CustomizeCode.PHONENUMBER_ERROR);
+        }
+        if (!registerService.registered(phonenumber)) {
+            return ResultDto.errorOf(CustomizeCode.PHONENUMBER_REGISTER_ERROR);
+        }
+        if (loginService.checkLogin(phonenumber, password)) {
+            String token = TokenUtils.sign(phonenumber);
+            return ResultDto.okWithData(CustomizeCode.LOGIN_SUCCESS, token);
+        }
+        return ResultDto.errorOf(CustomizeCode.LOGIN_FAILED);
     }
+}
